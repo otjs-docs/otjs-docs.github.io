@@ -8,6 +8,7 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   site: "https://otjs.github.io",
+  compressHTML: true,
   integrations: [
     mdx({
       syntaxHighlight: 'shiki',
@@ -20,6 +21,10 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
   // adapter: vercel({
   //   analytics: true,
   // }),

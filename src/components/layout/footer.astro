@@ -1,8 +1,6 @@
 ---
-import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Icon } from "astro-icon";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 type Props = {
   className?: string;
@@ -23,9 +21,9 @@ const { className } = Astro.props;
       >
 
       <p class="text-center text-sm leading-loose md:text-left balance-text">
-        Built by{" "}
+        Template Built by{" "}
         <a
-          href={siteConfig.links.twitter}
+          href="https://twitter.com/miickasmt"
           target="_blank"
           rel="noreferrer"
           class="font-medium underline underline-offset-4"
@@ -43,16 +41,16 @@ const { className } = Astro.props;
         </a>
          . Hosted on{" "}
         <a
-          href="https://vercel.com"
+          href="https://pages.github.com"
           target="_blank"
           rel="noreferrer"
           class="font-medium underline underline-offset-4"
         >
-          Vercel
+          GitHub Pages
         </a>
          . The source code is available on{" "}
         <a
-          href={siteConfig.links.github}
+          href="https://github.com/0xTheProDev/otjs.github.io"
           target="_blank"
           rel="noreferrer"
           class="font-medium underline underline-offset-4"
@@ -62,7 +60,5 @@ const { className } = Astro.props;
          .
       </p>
     </div>
-
-    <ThemeToggle client:idle />
   </div>
 </footer>

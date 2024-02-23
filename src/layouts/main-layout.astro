@@ -2,7 +2,7 @@
 import Footer from "@/components/layout/footer.astro";
 import Header from "@/components/layout/header.astro";
 import { MainNavigationMenu } from "@/components/main-navigation-menu";
-import { buttonVariants } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
 import BaseLayout from "./base-layout.astro";
 import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
@@ -42,12 +42,7 @@ const { title, description, mainClass } = Astro.props;
     />
 
     <nav slot="right-header">
-      <a
-        href="/login"
-        class={cn(buttonVariants({ variant: "outline", size: "sm" }), "px-4")}
-      >
-        Login
-      </a>
+      <ThemeToggle client:idle />
     </nav>
   </Header>
 

@@ -3,6 +3,7 @@ import Footer from "@/components/layout/footer.astro";
 import Header from "@/components/layout/header.astro";
 import { MainNavigationMenu } from "@/components/main-navigation-menu";
 import { siteConfig } from "@/config/site";
+import { ThemeToggle } from "@/components/theme-toggle";
 import Icon from "astro-icon";
 import BaseLayout from "./base-layout.astro";
 import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
@@ -32,21 +33,19 @@ const { title, description } = Astro.props;
     <!-- if use Navigation Menu on desktop -->
     <MainNavigationMenu slot="left-header" client:load />
     <SheetMobileNav
-      mainNavItems={[...navMenuConfig.links]}
       sidebarNavItems={[
-        ...navMenuConfig.infosNav,
-        ...navMenuConfig.examplesNav,
         ...docsConfig.sidebarNav,
       ]}
       slot="mobile-nav-header"
       client:load
     />
 
-    <nav slot="right-header">
+    <nav slot="right-header" class="flex flex-row items-center gap-4">
       <a href={siteConfig.links.github} target="_blank" rel="noreferrer">
         <Icon name="mdi:github" className="size-8" />
         <span class="sr-only">GitHub</span>
       </a>
+      <ThemeToggle client:idle />
     </nav>
   </Header>
 

@@ -3,21 +3,21 @@ import type { NavMenuConfig } from "@/types";
 export const navMenuConfig: NavMenuConfig = {
   infosNav: [
     {
-      title: "Menu",
+      title: "Quickstart",
       items: [
         {
-          title: "Features",
+          title: "Getting Started",
           href: "/#features",
           description: "Take a closer look at the project's features.",
         },
         {
-          title: "Twitter (@miickasmt)",
+          title: "Installation",
           href: "https://twitter.com/miickasmt",
           description: "Follow me to get the latest updates and news.",
           external: true,
         },
         {
-          title: "Source Code",
+          title: "Concepts",
           href: "https://github.com/mickasmt/astro-nomy",
           description: "You want to star the repository ? Let's get started!",
           external: true,
@@ -25,21 +25,21 @@ export const navMenuConfig: NavMenuConfig = {
       ],
     },
   ],
+  blog: {
+    title: "Blog",
+    href: "/blog",
+    description: "A Markdown/MDX blog built using Content Collections.",
+  },
+  docs: {
+    title: "Docs",
+    href: "/docs/getting-started",
+    description:
+      "A Markdown/MDX documentation site built using Content Collections.",
+  },
   examplesNav: [
     {
       title: "Examples",
       items: [
-        {
-          title: "Blog",
-          href: "/blog",
-          description: "A Markdown/MDX blog built using Content Collections.",
-        },
-        {
-          title: "Docs",
-          href: "/docs/getting-started",
-          description:
-            "A Markdown/MDX documentation site built using Content Collections.",
-        },
         {
           title: "Authentification",
           href: "/login",
@@ -70,12 +70,23 @@ export const navMenuConfig: NavMenuConfig = {
   ],
   links: [
     {
-      title: "FAQ",
-      href: "/faq",
+      title: "Blog",
+      href: "/blog",
+      description: "A Markdown/MDX blog built using Content Collections.",
     },
     {
-      title: "About",
-      href: "/about",
+      title: "Docs",
+      href: "/docs/getting-started",
+      description:
+        "A Markdown/MDX documentation site built using Content Collections.",
     },
+    // {
+    //   title: "FAQ",
+    //   href: "/faq",
+    // },
+    // {
+    //   title: "About",
+    //   href: "/about",
+    // },
   ],
 };

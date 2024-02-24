@@ -15,7 +15,6 @@ import { navMenuConfig } from "@/config/nav-menu";
 import type { MenuItem } from "@/types";
 
 const infos = navMenuConfig.infosNav[0];
-const examples = navMenuConfig.examplesNav[0];
 
 export function MainNavigationMenu() {
   return (
@@ -30,28 +29,16 @@ export function MainNavigationMenu() {
                   className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                   href="/"
                 >
-                  <Icons.logo className="size-8" />
-                  <div className="mb-2 mt-3 text-lg font-medium">Astronomy</div>
+                  <Icons.javascript className="size-8" />
+                  <div className="mb-2 mt-3 text-lg font-medium">Operational Transformation</div>
                   <p className="text-sm leading-tight text-muted-foreground">
-                    Modern application with differents sections examples built
-                    using shadcn/ui.
+                    A collection of algorithms to synchronize changes across multiple clients.
                   </p>
                 </a>
               </li>
 
               {infos.items?.map((info) => (
                 <ListItem key={info.title} {...info} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>{examples.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {examples.items?.map((example) => (
-                <ListItem key={example.title} {...example} />
               ))}
             </ul>
           </NavigationMenuContent>

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { siteConfig } from "@/config/site";
-import { Icons } from "@/icons";
+import Hamburger from "@/icons/Hamburger";
 import type { MainNavItem, SidebarNavItem } from "@/types";
 
 interface SheetMobileProps {
@@ -37,7 +37,7 @@ export function SheetMobileNav({
           size="sm"
           className="mr-2 h-8 px-1.5 md:hidden"
         >
-          <Icons.hamburger className="size-5" />
+          <Hamburger className="size-5" />
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>

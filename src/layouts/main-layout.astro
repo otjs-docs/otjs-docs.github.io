@@ -7,8 +7,9 @@ import { cn } from "@/lib/utils";
 import BaseLayout from "./base-layout.astro";
 import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
 import { navMenuConfig } from "@/config/nav-menu";
-// import { marketingConfig } from "@/config/marketing";
-// import MainNav from "@/components/layout/main-nav.astro";
+import { siteConfig } from "@/config/site";
+
+import Icon from "astro-icon";
 
 type Props = {
   title: string;
@@ -21,15 +22,6 @@ const { title, description, mainClass } = Astro.props;
 
 <BaseLayout title={title} description={description}>
   <Header>
-    <!-- if using only normals links  -->
-    <!-- <MainNav items={marketingConfig.mainNav} slot="left-header" />
-    <SheetMobileNav
-      mainNavItems={marketingConfig.mainNav}
-      slot="mobile-nav-header"
-      client:load
-    /> -->
-
-    <!-- if use Navigation Menu on desktop -->
     <MainNavigationMenu slot="left-header" client:load />
     <SheetMobileNav
       mainNavItems={[...navMenuConfig.links]}
@@ -40,7 +32,25 @@ const { title, description, mainClass } = Astro.props;
       client:load
     />
 
-    <nav slot="right-header">
+    <nav slot="right-header" class="flex flex-row items-center gap-4">
+      <a
+        href={siteConfig.links.github}
+        target="_blank"
+        rel="noreferrer"
+        class="hidden md:inline"
+      >
+        <span class="sr-only">GitHub</span>
+        <Icon name="mdi:github" class="size-6" />
+      </a>
+      <a
+        href={siteConfig.links.twitter}
+        target="_blank"
+        rel="noreferrer"
+        class="hidden md:inline"
+      >
+        <span class="sr-only">Twitter</span>
+        <Icon name="mdi:twitter" class="size-6" />
+      </a>
       <ThemeToggle client:idle />
     </nav>
   </Header>

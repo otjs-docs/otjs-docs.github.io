@@ -2,14 +2,13 @@
 import Footer from "@/components/layout/footer.astro";
 import Header from "@/components/layout/header.astro";
 import { MainNavigationMenu } from "@/components/main-navigation-menu";
-import { siteConfig } from "@/config/site";
 import { ThemeToggle } from "@/components/theme-toggle";
-import Icon from "astro-icon";
-import BaseLayout from "./base-layout.astro";
 import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
-import { navMenuConfig } from "@/config/nav-menu";
 import { docsConfig } from "@/config/docs";
-// import MainNav from "@/components/layout/main-nav.astro";
+import { siteConfig } from "@/config/site";
+import BaseLayout from "./base-layout.astro";
+
+import Icon from "astro-icon";
 
 type Props = {
   title: string;
@@ -21,16 +20,6 @@ const { title, description } = Astro.props;
 
 <BaseLayout title={title} description={description}>
   <Header className="border-b">
-    <!-- if using only normals links  -->
-    <!-- <MainNav items={docsConfig.mainNav} slot="left-header" />
-    <SheetMobileNav
-      mainNavItems={[...docsConfig.mainNav]}
-      sidebarNavItems={[...docsConfig.sidebarNav]}
-      slot="mobile-nav-header"
-      client:load
-    /> -->
-
-    <!-- if use Navigation Menu on desktop -->
     <MainNavigationMenu slot="left-header" client:load />
     <SheetMobileNav
       sidebarNavItems={[
@@ -41,9 +30,23 @@ const { title, description } = Astro.props;
     />
 
     <nav slot="right-header" class="flex flex-row items-center gap-4">
-      <a href={siteConfig.links.github} target="_blank" rel="noreferrer">
-        <Icon name="mdi:github" className="size-8" />
+      <a
+        href={siteConfig.links.github}
+        target="_blank"
+        rel="noreferrer"
+        class="hidden md:inline"
+      >
         <span class="sr-only">GitHub</span>
+        <Icon name="mdi:github" class="size-6" />
+      </a>
+      <a
+        href={siteConfig.links.twitter}
+        target="_blank"
+        rel="noreferrer"
+        class="hidden md:inline"
+      >
+        <span class="sr-only">Twitter</span>
+        <Icon name="mdi:twitter" class="size-6" />
       </a>
       <ThemeToggle client:idle />
     </nav>

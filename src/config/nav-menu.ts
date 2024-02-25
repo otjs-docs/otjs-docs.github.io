@@ -58,10 +58,10 @@ export const navMenuConfig: NavMenuConfig = {
     },
   ],
   links: [
-    {
-      title: "Blog",
-      href: "/blog",
-    },
+    // {
+    //   title: "Blog",
+    //   href: "/blog",
+    // },
     {
       title: "Docs",
       href: "/docs/getting-started",

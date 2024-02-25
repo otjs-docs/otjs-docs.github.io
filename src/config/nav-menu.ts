@@ -7,35 +7,24 @@ export const navMenuConfig: NavMenuConfig = {
       items: [
         {
           title: "Getting Started",
-          href: "/#features",
-          description: "Take a closer look at the project's features.",
+          href: "/docs/getting-started",
+          description: "Let's take you to the rocketship.",
         },
         {
           title: "Installation",
-          href: "https://twitter.com/miickasmt",
-          description: "Follow me to get the latest updates and news.",
+          href: "/docs/installation",
+          description: "Get the best for your workspace in one command.",
           external: true,
         },
         {
           title: "Concepts",
-          href: "https://github.com/mickasmt/astro-nomy",
-          description: "You want to star the repository ? Let's get started!",
+          href: "/docs/concepts",
+          description: "Place where the magic is revealed.",
           external: true,
         },
       ],
     },
   ],
-  blog: {
-    title: "Blog",
-    href: "/blog",
-    description: "A Markdown/MDX blog built using Content Collections.",
-  },
-  docs: {
-    title: "Docs",
-    href: "/docs/getting-started",
-    description:
-      "A Markdown/MDX documentation site built using Content Collections.",
-  },
   examplesNav: [
     {
       title: "Examples",
@@ -72,13 +61,15 @@ export const navMenuConfig: NavMenuConfig = {
     {
       title: "Blog",
       href: "/blog",
-      description: "A Markdown/MDX blog built using Content Collections.",
     },
     {
       title: "Docs",
       href: "/docs/getting-started",
-      description:
-        "A Markdown/MDX documentation site built using Content Collections.",
+    },
+    {
+      title: "Discussions",
+      href: "https://github.com/0xTheProDev/Operational-Transformation/discussions",
+      rel: "noreferrer",
     },
     // {
     //   title: "FAQ",

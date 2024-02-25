@@ -1,7 +1,5 @@
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
-import JavaScript from "@/icons/JavaScript";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,6 +10,9 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Badge } from "@/components/ui/badge";
 import { navMenuConfig } from "@/config/nav-menu";
+import ExternalLink from "@/icons/ExternalLink";
+import JavaScript from "@/icons/JavaScript";
+import { cn } from "@/lib/utils";
 import type { MenuItem } from "@/types";
 
 const infos = navMenuConfig.infosNav[0];
@@ -30,9 +31,12 @@ export function MainNavigationMenu() {
                   href="/"
                 >
                   <JavaScript className="size-8" />
-                  <div className="mb-2 mt-3 text-lg font-medium">Operational Transformation</div>
+                  <div className="mb-2 mt-3 text-lg font-medium">
+                    Operational Transformation
+                  </div>
                   <p className="text-sm leading-tight text-muted-foreground">
-                    A collection of algorithms to synchronize changes across multiple clients.
+                    A collection of algorithms to synchronize changes across
+                    multiple clients.
                   </p>
                 </a>
               </li>
@@ -46,8 +50,14 @@ export function MainNavigationMenu() {
 
         <NavigationMenuItem>
           {navMenuConfig.links.map((link) => (
-            <a key={link.href} href={link.href} className={navigationMenuTriggerStyle()}>
+            <a
+              key={link.href}
+              href={link.href}
+              rel={link.rel}
+              className={navigationMenuTriggerStyle()}
+            >
               {link.title}
+              {link.href.startsWith("http") ? <ExternalLink /> : null}
             </a>
           ))}
         </NavigationMenuItem>
@@ -62,7 +72,7 @@ const ListItem: React.FC<MenuItem> = ({
   description,
   launched,
   disabled,
-  external
+  external,
 }) => {
   const target = external ? "_blank" : undefined;
 
@@ -81,7 +91,11 @@ const ListItem: React.FC<MenuItem> = ({
         <div className="text-sm font-medium leading-none">
           <span className="mr-2">{title}</span>
           {disabled ? (
-            <Badge variant="secondary" radius="sm" className="h-5 px-1.5 text-xs font-medium">
+            <Badge
+              variant="secondary"
+              radius="sm"
+              className="h-5 px-1.5 text-xs font-medium"
+            >
               SOON
             </Badge>
           ) : null}

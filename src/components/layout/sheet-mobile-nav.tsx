@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { siteConfig } from "@/config/site";
-import Hamburger from "@/icons/Hamburger";
+import { Discord, ExternalLink, GitHub, Hamburger, LinkedIn, Medium, Twitter } from "@/icons/index";
 import type { MainNavItem, SidebarNavItem } from "@/types";
 
 interface SheetMobileProps {
@@ -23,11 +23,6 @@ export function SheetMobileNav({
       index ===
       self.findIndex((t) => t.href === item.href && t.title === item.title)
   );
-
-  // [
-  //     ...marketingConfig.mainNav,
-  //     ...docsConfig.mainNav,
-  //   ]
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -55,7 +50,7 @@ export function SheetMobileNav({
                       <a
                         key={item.href}
                         href={item.href}
-                        className="text-muted-foreground"
+                        className="text-muted-foreground inline-flex items-center gap-1"
                         onClick={() =>
                           item.href.startsWith("/#")
                             ? setOpen(false)
@@ -63,6 +58,7 @@ export function SheetMobileNav({
                         }
                       >
                         {item.title}
+                        {item.href.startsWith("http") ? <ExternalLink /> : null}
                       </a>
                     )
                 )}
@@ -101,6 +97,49 @@ export function SheetMobileNav({
                 })}
               </div>
             ) : null}
+
+            <div class="my-8 grid grid-cols-3 gap-4 items-center justify-items-start">
+              <a
+                href="https://github.com/0xTheProDev"
+                target="_blank"
+                rel="noreferrer"
+                class="rounded-lg border bg-background p-2"
+              >
+                <GitHub class="size-4" />
+              </a>
+              <a
+                href="https://twitter.com/ProDevOfficial"
+                target="_blank"
+                rel="noreferrer"
+                class="rounded-lg border bg-background p-2"
+              >
+                <Twitter class="size-4" />
+              </a>
+              <a
+                href="https://linkedin.com/in/progyan-bhattacharya"
+                target="_blank"
+                rel="noreferrer"
+                class="rounded-lg border bg-background p-2"
+              >
+                <LinkedIn class="size-4" />
+              </a>
+              <a
+                href="https://discord.gg/theprodev"
+                target="_blank"
+                rel="noreferrer"
+                class="rounded-lg border bg-background p-2"
+              >
+                <Discord class="size-4" />
+              </a>
+              <a
+                href="https://theprodev.medium.com"
+                target="_blank"
+                rel="noreferrer"
+                class="rounded-lg border bg-background p-2"
+              >
+                <Medium class="size-4" />
+              </a>
+            </div>
           </div>
         </ScrollArea>
       </SheetContent>

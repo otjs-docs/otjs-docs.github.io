@@ -7,7 +7,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://otjs.github.io",
+  site: "https://otjs-docs.github.io",
   compressHTML: true,
   integrations: [
     mdx({

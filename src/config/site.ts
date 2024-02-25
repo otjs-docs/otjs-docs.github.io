@@ -5,8 +5,8 @@ export const siteConfig: SiteConfig = {
   shortName: "@otjs",
   description:
     "A collection of Algorithms to Synchronise changes across multiple clients using Operational Transformation.",
-  url: "https://otjs.github.io",
-  ogImage: "https://otjs.github.io/og.jpg",
+  url: "https://otjs-docs.github.io",
+  ogImage: "https://otjs-docs.github.io/og.jpg",
   links: {
     twitter: "https://twitter.com/ProDevOfficial",
     github: "https://github.com/0xTheProDev/Operational-Transformation",

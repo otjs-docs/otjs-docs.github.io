@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/0xTheProDev/otjs.github.io.git"
+    "url": "https://github.com/otjs-docs/otjs-docs.github.io"
   },
   "engines": {
     "node": ">= 20",

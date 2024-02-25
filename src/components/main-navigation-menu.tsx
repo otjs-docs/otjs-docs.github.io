@@ -57,7 +57,7 @@ export function MainNavigationMenu() {
               className={navigationMenuTriggerStyle()}
             >
               {link.title}
-              {link.href.startsWith("http") ? <ExternalLink /> : null}
+              {link.external ? <ExternalLink /> : null}
             </a>
           ))}
         </NavigationMenuItem>

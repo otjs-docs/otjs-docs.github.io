@@ -14,45 +14,11 @@ export const navMenuConfig: NavMenuConfig = {
           title: "Installation",
           href: "/docs/installation",
           description: "Get the best for your workspace in one command.",
-          external: true,
         },
         {
           title: "Concepts",
-          href: "/docs/concepts",
-          description: "Place where the magic is revealed.",
-          external: true,
-        },
-      ],
-    },
-  ],
-  examplesNav: [
-    {
-      title: "Examples",
-      items: [
-        {
-          title: "Authentification",
-          href: "/login",
-          description: "Login and register pages for authentification.",
-          disabled: true,
-        },
-        {
-          title: "Dashboard",
-          href: "/#dashboard",
-          description: "A dashboard panel after authentification.",
-          disabled: true,
-        },
-        {
-          title: "Ecommerce",
-          href: "/#examples/ecommerce",
-          description:
-            "Different pages of an ecommerce app fetching data from an API.",
-          disabled: true,
-        },
-        {
-          title: "Social Media",
-          href: "/#examples/social-media",
-          description: "Different components & pages of an social media app.",
-          disabled: true,
+          href: "/docs/database-basics",
+          description: "Know what's going behind the scenes.",
         },
       ],
     },
@@ -69,7 +35,7 @@ export const navMenuConfig: NavMenuConfig = {
     {
       title: "Discussions",
       href: "https://github.com/0xTheProDev/Operational-Transformation/discussions",
-      rel: "noreferrer",
+      external: true,
     },
     // {
     //   title: "FAQ",

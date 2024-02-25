@@ -58,7 +58,7 @@ export function SheetMobileNav({
                         }
                       >
                         {item.title}
-                        {item.href.startsWith("http") ? <ExternalLink /> : null}
+                        {item.external ? <ExternalLink /> : null}
                       </a>
                     )
                 )}
@@ -83,9 +83,10 @@ export function SheetMobileNav({
                             <a
                               href={subItem.href}
                               target={subItem?.external ? "_blank" : undefined}
-                              className="text-muted-foreground"
+                              className="text-muted-foreground inline-flex flex-row items-center"
                             >
                               {subItem.title}
+                              {subItem.external ? <ExternalLink className="w-full px-2" /> : null}
                             </a>
                           ) : (
                             subItem.title
@@ -98,46 +99,46 @@ export function SheetMobileNav({
               </div>
             ) : null}
 
-            <div class="my-8 grid grid-cols-3 gap-4 items-center justify-items-start">
+            <div className="my-8 grid grid-cols-3 gap-4 items-center justify-items-start">
               <a
                 href="https://github.com/0xTheProDev"
                 target="_blank"
                 rel="noreferrer"
-                class="rounded-lg border bg-background p-2"
+                className="rounded-lg border bg-background p-2"
               >
-                <GitHub class="size-4" />
+                <GitHub className="size-4" />
               </a>
               <a
                 href="https://twitter.com/ProDevOfficial"
                 target="_blank"
                 rel="noreferrer"
-                class="rounded-lg border bg-background p-2"
+                className="rounded-lg border bg-background p-2"
               >
-                <Twitter class="size-4" />
+                <Twitter className="size-4" />
               </a>
               <a
                 href="https://linkedin.com/in/progyan-bhattacharya"
                 target="_blank"
                 rel="noreferrer"
-                class="rounded-lg border bg-background p-2"
+                className="rounded-lg border bg-background p-2"
               >
-                <LinkedIn class="size-4" />
+                <LinkedIn className="size-4" />
               </a>
               <a
                 href="https://discord.gg/theprodev"
                 target="_blank"
                 rel="noreferrer"
-                class="rounded-lg border bg-background p-2"
+                className="rounded-lg border bg-background p-2"
               >
-                <Discord class="size-4" />
+                <Discord className="size-4" />
               </a>
               <a
                 href="https://theprodev.medium.com"
                 target="_blank"
                 rel="noreferrer"
-                class="rounded-lg border bg-background p-2"
+                className="rounded-lg border bg-background p-2"
               >
-                <Medium class="size-4" />
+                <Medium className="size-4" />
               </a>
             </div>
           </div>

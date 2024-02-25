@@ -13,122 +13,55 @@ export const docsConfig: DocsConfig = {
   ],
   sidebarNav: [
     {
-      title: "Getting Started",
+      title: "Introduction",
       items: [
         {
-          title: "Introduction",
+          title: "Getting Started",
           href: "/docs/getting-started/",
         },
-      ],
-    },
-    {
-      title: "Documentation",
-      items: [
         {
-          title: "Introduction",
-          href: "/docs/documentation",
-        },
-        {
-          title: "Contentlayer",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Components",
-          href: "/docs/documentation/components",
-        },
-        {
-          title: "Code Blocks",
-          href: "/docs/documentation/code-blocks",
-        },
-        {
-          title: "Style Guide",
-          href: "/docs/documentation/style-guide",
-        },
-        {
-          title: "Search",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Installation",
+          href: "/docs/installation/",
         },
       ],
     },
     {
-      title: "Blog",
+      title: "Concepts",
       items: [
         {
-          title: "Introduction",
-          href: "/docs/in-progress",
+          title: "Basics of Database",
+          href: "/docs/database-basics",
           disabled: true,
         },
         {
-          title: "Build your own",
-          href: "/docs/in-progress",
+          title: "Consistency Models",
+          href: "/docs/consistency",
           disabled: true,
         },
         {
-          title: "Writing Posts",
-          href: "/docs/in-progress",
+          title: "History of Web Editors",
+          href: "/docs/web-editors",
+          disabled: true,
+        },
+        {
+          title: "Operational Transformation",
+          href: "/docs/operational-transformation",
+          disabled: true,
+        },
+        {
+          title: "Alernative - Conflict-free Replicated Data Types",
+          href: "/docs/alternatives",
           disabled: true,
         },
       ],
     },
     {
-      title: "Dashboard",
+      title: "External Links",
       items: [
         {
-          title: "Introduction",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Layouts",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Server Components",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Authentication",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Database with Prisma",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "API Routes",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-      ],
-    },
-    {
-      title: "Marketing Site",
-      items: [
-        {
-          title: "Introduction",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "File Structure",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Tailwind CSS",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Typography",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "operational-transformation.github.io",
+          href: "https://operational-transformation.github.io/",
+          external: true,
         },
       ],
     },

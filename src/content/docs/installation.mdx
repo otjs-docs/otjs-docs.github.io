@@ -1,10 +1,106 @@
 ---
-title: Not Implemented
-description: This page is in progress.
+title: Installation
+description: How to use @otjs packages in your project.
 ---
+
+> “Life is really simple, but we insist on making it complicated.” ― Confucius
 
 <Callout icon="💡" type="info">
 
-This site is a work in progress. If you see dummy text on a page, it means I'm still working on it. You can follow updates on Twitter [@shadcn](https://twitter.com/shadcn).
+All installation script in this document are using `pnpm` as package manager. Kindly check the compatible commands and options, in case you are using any other package manager and/or runtime.
 
 </Callout>
+
+## 🚀 Most Common Scenario
+
+More often than not all you need is to synchronise your coding workspaces. For that, `@otjs` comes with two out of the box packages, namely - `@otjs/firebase-ace` and `@otjs/firebase-monaco` for [Ace](https://ace.c9.io/) and [Monaco](https://microsoft.github.io/monaco-editor/) editor respectively.
+
+```sh
+pnpm add @otjs/firebase-ace
+```
+or
+```sh
+pnpm add @otjs/firebase-monaco
+```
+
+### 🔑 Usage
+
+Given these packages come batteries included, they only require few configuration, and all set to synchronise.
+
+- For `@otjs/firebase-ace`:
+
+```typescript
+import { FireAceEditor } from "@otjs/firebase-ace";
+
+const fireAce = new FireAceEditor({
+  databaseRef:            // Database Reference in Firebase Realtime DB
+  editor:                 // Ace Editor instance
+  announcementDuration:   // Duration to hide Cursor tooltip (optional)
+  userId:                 // Unique Identifier for current user
+  userColor:              // Unique Color Code for current user
+  userName:               // Human readable Name or Short Name (optional)
+});
+```
+
+- For `@otjs/firebase-monaco`:
+
+```typescript
+import { FireMonacoEditor } from "@otjs/firebase-monaco";
+
+const fireMonaco = new FireMonacoEditor({
+  databaseRef:            // Database Reference in Firebase Realtime DB
+  editor:                 // Monaco Editor instance
+  announcementDuration:   // Duration to hide Cursor tooltip (optional)
+  userId:                 // Unique Identifier for current user
+  userColor:              // Unique Color Code for current user
+  userName:               // Human readable Name or Short Name (optional)
+});
+```
+
+## 📦 Packages
+
+There are multiple packages published under `@otjs` namespace and each have a shared responsibility in building the whole system.
+
+<div className="docs-grid-cols-2 mt-6">
+
+  <Card href="https://www.npmjs.com/package/@otjs/ace" external>
+    #### @otjs/ace
+    Editor Adapter for Ace Editor by Cloud9.
+  </Card>
+
+  <Card href="https://www.npmjs.com/package/@otjs/firebase-ace" external>
+    #### @otjs/firebase-ace
+    Plaintext Editor with in-built binding for Firebase and Ace Editor.
+  </Card>
+
+  <Card href="https://www.npmjs.com/package/@otjs/firebase-monaco" external>
+    #### @otjs/firebase-monaco
+    Plaintext Editor with in-built binding for Firebase and Monaco Editor.
+  </Card>
+
+  <Card href="https://www.npmjs.com/package/@otjs/firebase-plaintext" external>
+    #### @otjs/firebase-plaintext
+    Database Adapter for Firebase by Google Cloud.
+  </Card>
+
+  <Card href="https://www.npmjs.com/package/@otjs/monaco" external>
+    #### @otjs/monaco
+    Editor Adapter for Monaco Editor by Microsoft.
+  </Card>
+
+  <Card href="https://www.npmjs.com/package/@otjs/plaintext" external>
+    #### @otjs/plaintext
+    Text Operation feature sets for Transformations.
+  </Card>
+
+  <Card href="https://www.npmjs.com/package/@otjs/plaintext-editor" external>
+    #### @otjs/plaintext-editor
+    Client (Editor) implementation for Plaintext Synchronisation.
+  </Card>
+
+  <Card href="https://www.npmjs.com/package/@otjs/state-machine" external>
+    #### @otjs/state-machine
+    Database Synchronisation Toolkit.
+  </Card>
+
+</div>

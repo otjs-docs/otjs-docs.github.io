@@ -31,7 +31,7 @@ export function getPagerForDoc(slug: string) {
 export function flatten(links: { items? }[]) {
   return links.reduce((flat, link) => {
     return flat.concat(link.items ? flatten(link.items) : link);
-  }, []);
+  }, []).filter(item => !(item.disabled || item.external));
 }
 
 const { slug } = Astro.props;

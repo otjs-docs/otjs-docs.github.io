@@ -17,11 +17,11 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Getting Started",
-          href: "/docs/getting-started/",
+          href: "/docs/getting-started",
         },
         {
           title: "Installation",
-          href: "/docs/installation/",
+          href: "/docs/installation",
         },
       ],
     },

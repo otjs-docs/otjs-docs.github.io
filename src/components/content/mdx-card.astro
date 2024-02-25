@@ -7,8 +7,10 @@ interface Props extends HTMLAttributes<"div"> {
   href?: string;
   className?: string;
   disabled?: boolean;
+  external?: boolean;
 }
-const { href, className, disabled, ...attrs } = Astro.props;
+const { href, className, disabled, external, ...attrs } = Astro.props;
+const linkAttrs = external ? { target: '_blank', rel: 'noreferrer' } : {};
 ---
 
 <div
@@ -28,8 +30,8 @@ const { href, className, disabled, ...attrs } = Astro.props;
   </div>
   {
     href && (
-      <a href={disabled ? "#" : href} class="absolute inset-0">
-        <span class="sr-only">View</span>
+      <a href={disabled ? "#" : href} class="absolute inset-0" {...linkAttrs}>
+        <span class="sr-only">Go</span>
       </a>
     )
   }

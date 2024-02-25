@@ -1,60 +1,85 @@
 ---
-title: Documentation
-description: Welcome to the Astronomy documentation.
+title: Getting Started
+description: Let's get you familiar with the journey of Operational Transformation, the repository.
 ---
 
-This is the documentation for the Astronomy site.
+> “An idea that is not dangerous is unworthy of being called an idea at all.” ― Oscar Wilde
 
-This is an example of a doc site built using [Markdown and MDX](https://docs.astro.build/en/guides/markdown-content/) of Astro.
+## 💡 Idea
+
+It all started with a simple idea, how can we share our codes over internet. The obvious start was to use a [Version Control System](https://en.wikipedia.org//wiki/Version_control)
+and create a public repository in one of the managed VCS hosting sites. However, I soon realised this will not do a good justice to the User Experience
+as the changes has to be frequently committed, pushed and pulled by others to be in sync at all time. So I went on internet to check if there is any tool
+that could do this out of the box and I could simply integrate or use as package to my solution.
+
+## ✨ Inspiration
+
+The first occurence to such solution came from the OG collaboration tool [Firepad](https://firepad.io). I have long been introduced to Firepad, mostly as
+a note sharing application, however this time my interest piqued on about it's internals. So I went to it's GitHub repository, and learn the term
+[Operational Transformation](https://en.wikipedia.org/wiki/Operational_transformation).
 
 <Callout icon="⚠️" type="warning">
 
-This site is a work in progress. If you see dummy text on a page, it means I'm still working on it. You can follow updates on Twitter [@miickasmt](https://twitter.com/miickasmt).
+[Firepad](https://github.com/FirebaseExtended/firepad) is in <b>frozen</b> status since August 2020 and no longer being actively maintained.
 
 </Callout>
 
-<Callout icon="💡" type="info">
+### 😵‍💫 Problems with Firepad
 
-I will gradually update the documentation of the starter template, relying on [Astro](https://docs.astro.build/en/getting-started/) and [shadcn/ui](https://ui.shadcn.com/) as references.
+While going through source code and running the examples provided, I soon realised that albeit being developed in quite elegant way, it does not work for
+certain code editor, namely Microsoft's [Monaco Editor](https://microsoft.github.io/monaco-editor/), which was going to be my preferred editor.
 
-</Callout>
+However, this also provided me with an opportunity to contribute to the repository and gain further insight on it's working principles. I took over the challenge and managed to fix all the known irregularities experienced by developers time to time with Monaco Editor with Firepad. Of course, the changes
+were made public through a [Pull Request](https://github.com/FirebaseExtended/firepad/pull/325) to the repository.
 
-## Features
+During this, I came across another problem with the existing code. Despite it trying to attempt a much more granular pattern to handle each editor
+individually, it still loaded all of them into the final bundle. And not only that, but due to out of date package managers and bundlers, it was
+literally combining all the codes into one file and then minify it.
 
-Select a feature below to learn more about it.
+## ⚡ Realisations
+
+Age and Popularity of the Firepad had caught up to it's flexibility to changes. Hence, being unsatisfied with the state of the architecture and it's
+ease to change and adopt new designs and requirements, I decided to build an alternative Open Source repository from ground up. I adopted [Adapter Pattern](https://en.wikipedia.org/wiki/Adapter_pattern)
+at the core.
+
+This helped the design to be not only simple and atomic in nature, but also opened up the avenue for consumer applications to write their own Adapters
+and run about anything on top of `@otjs`. In this process, I was also able to decouple parts of the system and made them communicate over defined
+protocols and interfaces.
+
+### 👨🏻‍💻 Tech Stack
+
+Technological choices so evolved while building this repository included the items listed as following:
 
 <div className="docs-grid-cols-2 mt-6">
 
-<Card href="/docs/documentation">
+  <Card href="https://www.typescriptlang.org/" external>
+    #### TypeScript
+    Programming Language
+  </Card>
 
-### Documentation
+  <Card href="https://webpack.js.org/" external>
+    #### Webpack
+    Build System
+  </Card>
 
-This documentation site built using Contentlayer.
+  <Card href="https://jestjs.io/" external>
+    #### Jest
+    Test Environment
+  </Card>
 
-</Card>
+  <Card href="https://lerna.js.org/" external>
+    #### Lerna
+    Monorepo Management
+  </Card>
 
-<Card  href="/docs/marketing" disabled>
+  <Card href="https://pnpm.io/" external>
+    #### Pnpm
+    Dependency Management
+  </Card>
 
-### Marketing
-
-The marketing site with landing pages.
-
-</Card>
-
-<Card  href="/docs/app" disabled>
-
-### App
-
-The dashboard with auth and subscriptions.
-
-</Card>
-
-<Card  href="/docs/blog" disabled>
-
-### Blog
-
-The blog built using Contentlayer and MDX.
-
-</Card>
+  <Card href="https://prettier.io/" external>
+    #### Prettier
+    Code Styling
+  </Card>
 
 </div>

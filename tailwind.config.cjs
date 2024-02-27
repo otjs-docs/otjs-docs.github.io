@@ -72,10 +72,15 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        "sky": {
+          from: { transform: "rotate(45deg)" },
+          to: { transform: "rotate(45 + 360deg)" }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "sky-infinite": "sky 200000ms linear infinite",
       },
     },
   },

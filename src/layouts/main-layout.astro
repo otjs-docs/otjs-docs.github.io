@@ -10,17 +10,20 @@ import { navMenuConfig } from "@/config/nav-menu";
 import { siteConfig } from "@/config/site";
 
 import Icon from "astro-icon";
+import HeroAnimation from "@/components/hero-animation.astro";
 
 type Props = {
   title: string;
   description?: string;
+  heroAnimation?: boolean;
   mainClass?: string;
 };
 
-const { title, description, mainClass } = Astro.props;
+const { title, heroAnimation, description, mainClass } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
+  {heroAnimation && <HeroAnimation/>}
   <Header>
     <MainNavigationMenu slot="left-header" client:load />
     <SheetMobileNav

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import Icon from "astro-icon";
 ---
 
-<MainLayout title="Home | Operational Transformation">
+<MainLayout title="Operational Transformation" heroAnimation description="A collection of algorithms to synchronize changes across multiple clients">
   <section class="space-y-6 pb-12 pt-16 lg:py-28">
     <div
       class="container flex max-w-[64rem] flex-col items-center gap-5 text-center"
@@ -28,7 +28,7 @@ import Icon from "astro-icon";
       <div class="flex justify-center space-x-2 md:space-x-4">
         <a
           href="/docs/getting-started/"
-          class={cn(buttonVariants({ size: "lg" }))}
+          class={cn(buttonVariants({ size: "lg" }), "z-50")}
         >
           Get Started
         </a>

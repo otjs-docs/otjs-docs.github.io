@@ -2,8 +2,8 @@
 import Footer from "@/components/layout/footer.astro";
 import Header from "@/components/layout/header.astro";
 import { MainNavigationMenu } from "@/components/main-navigation-menu";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { docsConfig } from "@/config/docs";
 import { siteConfig } from "@/config/site";
 import BaseLayout from "./base-layout.astro";
@@ -55,4 +55,42 @@ const { title, description } = Astro.props;
   <slot />
 
   <Footer className="border-t" />
+  <script>
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    const copyCode = async (block, button) => {
+      const code = block.querySelector("code");
+      const text = code.innerText;
+
+      await navigator.clipboard.writeText(text);
+
+      // visual feedback that task is completed
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 px-4 py-2 absolute top-0 right-0";
+      copyButton.innerHTML = copyButtonLabel;
+      copyButton.setAttribute("aria-label", "Copy Code to Clipboard")
+
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+      // wrap codebock with relative parent element
+      codeBlock.parentNode.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+  </script>
 </BaseLayout>

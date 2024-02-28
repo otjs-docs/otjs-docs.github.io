@@ -34,6 +34,10 @@ export const navMenuConfig: NavMenuConfig = {
       href: "/docs/getting-started",
     },
     {
+      title: "Playground",
+      href: "/play",
+    },
+    {
       title: "Discussions",
       href: "https://github.com/0xTheProDev/Operational-Transformation/discussions",
       external: true,

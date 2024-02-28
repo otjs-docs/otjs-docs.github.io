@@ -1,7 +1,7 @@
 ---
-const MAX_STAR_COUNT = 25 as const;
-const MIN_STAR_COUNT = 10 as const;
-const starCount = Math.max(Math.round(Math.random() * MAX_STAR_COUNT), MIN_STAR_COUNT);
+const MAX_STAR_COUNT = 25;
+const MIN_STAR_COUNT = 10;
+const starCount = MIN_STAR_COUNT + (Math.random() * (MAX_STAR_COUNT - MIN_STAR_COUNT)) | 0;
 ---
 <div class="fixed h-dvh w-dvw overflow-hidden flex items-center justify-center">
   <div class="relative rotate-45 motion-safe:animate-sky-infinite">

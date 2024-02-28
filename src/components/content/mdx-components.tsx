@@ -4,6 +4,7 @@ import Callout from "@/components/callout.astro";
 import MdxCard from "@/components/content/mdx-card.astro";
 import { cn } from "@/lib/utils";
 import { Image } from "astro:assets";
+import { Code } from 'astro:components';
 
 type Props = {
   className?: string;
@@ -145,4 +146,5 @@ export const MdxComponents = {
   Image,
   Callout,
   Card: MdxCard,
+  Code,
 };

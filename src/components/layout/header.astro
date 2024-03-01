@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 import Icon from "astro-icon";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 type Props = {
   className?: string;
@@ -16,7 +16,7 @@ const { className } = Astro.props;
 <header
   class={cn(
     "flex items-center h-16 md:h-18 z-50 sticky top-0 bg-background",
-    className
+    className,
   )}
 >
   <div class="relative container flex items-center justify-between w-full">

@@ -3,7 +3,11 @@ import MainLayout from "@/layouts/main-layout.astro";
 
 import Icon from "astro-icon";
 ---
-<MainLayout title="Playground | Operational Transformation" description="Live Example of @otjs Packages">
+
+<MainLayout
+  title="Playground | Operational Transformation"
+  description="Live Example of @otjs Packages"
+>
   <section class="space-y-6 pb-12 pt-16 lg:py-28">
     <div
       class="container flex max-w-[64rem] flex-col items-center gap-5 text-center"
@@ -17,7 +21,8 @@ import Icon from "astro-icon";
       <p
         class="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 text-balance"
       >
-        See <span class="text-gradient_indigo-purple">@otjs</span> in action with any combination of Database and Editor.
+        See <span class="text-gradient_indigo-purple">@otjs</span> in action with
+        any combination of Database and Editor.
       </p>
     </div>
   </section>
@@ -25,31 +30,43 @@ import Icon from "astro-icon";
   <section
     class="container mx-auto max-w-[58rem] md:max-w-[64rem] md:min-h-[480px]"
   >
-    <div class="grid justify-center gap-4 sm:grid-cols-2 md:grid-cols-3 text-center">
+    <div
+      class="grid justify-center gap-4 sm:grid-cols-2 md:grid-cols-3 text-center"
+    >
       <div class="relative overflow-hidden rounded-lg border bg-background p-2">
-        <div class="flex h-[180px] flex-col items-center justify-between gap-2 rounded-md p-5">
+        <div
+          class="flex h-[180px] flex-col items-center justify-between gap-2 rounded-md p-5"
+        >
           <Icon name="code-computer" class="size-16" />
           <div class="space-y-4">
             <h3 class="font-bold">@otjs/firebase-ace</h3>
             <p class="text-sm text-muted-foreground">
-              A fully working example of Collaborative editing with Ace Editor and Firebase Database.
+              A fully working example of Collaborative editing with Ace Editor
+              and Firebase Database.
             </p>
           </div>
         </div>
-        <a href="#" class="absolute inset-0"><span class="sr-only">Go</span></a>
+        <a href="/play/firebase-ace/" class="absolute inset-0"
+          ><span class="sr-only">Go</span></a
+        >
       </div>
 
       <div class="relative overflow-hidden rounded-lg border bg-background p-2">
-        <div class="flex h-[180px] flex-col items-center justify-between gap-2 rounded-md p-5">
+        <div
+          class="flex h-[180px] flex-col items-center justify-between gap-2 rounded-md p-5"
+        >
           <Icon name="code-computer" class="size-16" />
           <div class="space-y-4">
             <h3 class="font-bold">@otjs/firebase-monaco</h3>
             <p class="text-sm text-muted-foreground">
-              A fully working example of Collaborative editing with Monaco Editor and Firebase Database.
+              A fully working example of Collaborative editing with Monaco
+              Editor and Firebase Database.
             </p>
           </div>
         </div>
-        <a href="#" class="absolute inset-0"><span class="sr-only">Go</span></a>
+        <a href="/play/firebase-monaco/" class="absolute inset-0"
+          ><span class="sr-only">Go</span></a
+        >
       </div>
     </div>
   </section>

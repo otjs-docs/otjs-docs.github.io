@@ -1,4 +1,4 @@
-// import { User } from "@prisma/client"
+import type { FirebaseOptions } from "firebase/app";
 
 export type NavItem = {
   title: string;
@@ -65,8 +65,8 @@ export type SubscriptionPlan = {
   stripePriceId: string;
 };
 
-// export type UserSubscriptionPlan = SubscriptionPlan &
-//   Pick<User, "stripeCustomerId" | "stripeSubscriptionId"> & {
-//     stripeCurrentPeriodEnd: number
-//     isPro: boolean
-//   }
+export type PlaygroundConfig = {
+  firebase: {
+    options: FirebaseOptions;
+  };
+};

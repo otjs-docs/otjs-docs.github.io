@@ -24,11 +24,8 @@ const guide = Astro.props.data;
         {guide.title}
       </h2>
       {
-        guide.description && (  
-          <p
-            class="text-muted-foreground"
-            transition:name={"desc-" + slug}
-          >
+        guide.description && (
+          <p class="text-muted-foreground" transition:name={"desc-" + slug}>
             {guide.description}
           </p>
         )

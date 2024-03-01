@@ -21,7 +21,7 @@ const segment = extractSegmentURL(Astro.url.pathname);
             item.href.startsWith(`/${segment}`)
               ? "text-foreground"
               : "text-foreground/60",
-            item.disabled && "cursor-not-allowed opacity-80"
+            item.disabled && "cursor-not-allowed opacity-80",
           )}
         >
           {item.title}

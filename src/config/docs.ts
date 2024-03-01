@@ -1,4 +1,4 @@
-import type { DocsConfig } from "@/types"
+import type { DocsConfig } from "@/types";
 
 export const docsConfig: DocsConfig = {
   mainNav: [
@@ -66,4 +66,4 @@ export const docsConfig: DocsConfig = {
       ],
     },
   ],
-}
+};

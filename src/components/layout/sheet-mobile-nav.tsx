@@ -4,7 +4,15 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { siteConfig } from "@/config/site";
-import { Discord, ExternalLink, GitHub, Hamburger, LinkedIn, Medium, Twitter } from "@/icons/index";
+import {
+  Discord,
+  ExternalLink,
+  GitHub,
+  Hamburger,
+  LinkedIn,
+  Medium,
+  Twitter,
+} from "@/icons/index";
 import type { MainNavItem, SidebarNavItem } from "@/types";
 
 interface SheetMobileProps {
@@ -21,7 +29,7 @@ export function SheetMobileNav({
   const mergedMainNavItems = mainNavItems?.filter(
     (item, index, self) =>
       index ===
-      self.findIndex((t) => t.href === item.href && t.title === item.title)
+      self.findIndex((t) => t.href === item.href && t.title === item.title),
   );
 
   return (
@@ -60,7 +68,7 @@ export function SheetMobileNav({
                         {item.title}
                         {item.external ? <ExternalLink /> : null}
                       </a>
-                    )
+                    ),
                 )}
               </div>
             ) : null}
@@ -69,7 +77,7 @@ export function SheetMobileNav({
               <div className="flex flex-col space-y-2">
                 {sidebarNavItems.map((item, index) => {
                   const activeItems = item?.items?.filter(
-                    (subItem) => !subItem.disabled
+                    (subItem) => !subItem.disabled,
                   );
 
                   if (!activeItems || activeItems.length === 0) return null;
@@ -86,7 +94,9 @@ export function SheetMobileNav({
                               className="text-muted-foreground inline-flex flex-row items-center"
                             >
                               {subItem.title}
-                              {subItem.external ? <ExternalLink className="w-full px-2" /> : null}
+                              {subItem.external ? (
+                                <ExternalLink className="w-full px-2" />
+                              ) : null}
                             </a>
                           ) : (
                             subItem.title

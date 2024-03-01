@@ -39,5 +39,4 @@ const guides = defineCollection({
   }),
 });
 
-
-export const collections = { blog , docs, guides };
+export const collections = { blog, docs, guides };

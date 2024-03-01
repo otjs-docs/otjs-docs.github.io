@@ -14,5 +14,5 @@ export const packageNames = [
   "plaintext",
   "plaintext-editor",
   "monaco",
-  "state-machine"
+  "state-machine",
 ] as const;

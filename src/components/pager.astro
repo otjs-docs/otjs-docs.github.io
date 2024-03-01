@@ -12,7 +12,7 @@ type Props = {
 export function getPagerForDoc(slug: string) {
   const flattenedLinks = [...flatten(docsConfig.sidebarNav)];
   let activeIndex = flattenedLinks.findIndex(
-    (link) => `/docs/${slug}` === link?.href
+    (link) => `/docs/${slug}` === link?.href,
   );
 
   activeIndex = Math.max(activeIndex, 0);
@@ -29,9 +29,11 @@ export function getPagerForDoc(slug: string) {
 
 // @ts-ignore
 export function flatten(links: { items? }[]) {
-  return links.reduce((flat, link) => {
-    return flat.concat(link.items ? flatten(link.items) : link);
-  }, []).filter(item => !(item.disabled || item.external));
+  return links
+    .reduce((flat, link) => {
+      return flat.concat(link.items ? flatten(link.items) : link);
+    }, [])
+    .filter((item) => !(item.disabled || item.external));
 }
 
 const { slug } = Astro.props;

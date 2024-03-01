@@ -1,0 +1,141 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
+import MainLayout from "@/layouts/main-layout.astro";
+import { cn } from "@/lib/utils";
+
+import Icon from "astro-icon";
+---
+
+<MainLayout
+  title="Playground - Monaco & Firebase | Operational Transformation"
+  description="Live Example of @otjs/firebase-monaco Package"
+>
+  <section class="space-y-6 pb-12 pt-16 lg:py-28">
+    <div
+      class="container flex max-w-[64rem] flex-col items-center gap-5 text-center"
+    >
+      <h1
+        class="font-heading text-2xl font-bold md:text-3xl !leading-[1.1] text-balance"
+      >
+        Monaco & Firebase Example
+      </h1>
+
+      <p
+        class="max-w-[42rem] leading-normal text-muted-foreground sm:text-lg sm:leading-8 text-balance"
+      >
+        Checkout <span class="text-gradient_indigo-purple"
+          >@otjs/firebase-monaco</span
+        > in action. Just copy the URL in your browser window and share with others.
+      </p>
+
+      <div class="flex items-center justify-center space-x-2 md:space-x-4 mx-4">
+        <a href="/play/" class={cn(buttonVariants({ size: "lg" }))}>
+          See Other Examples
+        </a>
+        <a
+          href={siteConfig.links.github}
+          target="_blank"
+          rel="noreferrer"
+          class={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+        >
+          <Icon name="github" class="mr-2 size-5" />
+          Star on Github
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="container mx-auto space-y-6 max-w-[58rem] md:max-w-[86rem] h-[240px] md:h-[480px]"
+  >
+    <div id="editor" class="h-full w-full border bg-background"></div>
+  </section>
+
+  <!-- RequireJS and Monaco  -->
+  <script
+    is:inline
+    src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"
+    integrity="sha256-0SGl1PJNDyJwcV5T+weg2zpEMrh7xvlwO4oXgvZCeZk="
+    crossorigin="anonymous"></script>
+  <script is:inline>
+    require.config({
+      paths: { vs: "https://unpkg.com/monaco-editor@0.34.1/min/vs" },
+    });
+    require(["vs/editor/editor.main"]);
+  </script>
+
+  <!-- Instantiate Editor -->
+  <script>
+    import { playgroundConfig } from "@/config/playground";
+
+    import { FireMonacoEditor } from "@otjs/firebase-monaco";
+    import { initializeApp } from "firebase/app";
+    import { child, getDatabase, push, ref } from "firebase/database";
+    import { v4 as uuid } from "uuid";
+
+    const getDatabaseRef = () => {
+      let _ref = ref(getDatabase());
+
+      const hash = window.location.hash.replace(/#/g, "");
+
+      if (hash) {
+        _ref = child(_ref, hash);
+      } else {
+        _ref = push(_ref); // generate unique location.
+        window.location.replace(window.location + "#" + _ref.key); // add it as a hash to the URL.
+      }
+
+      console.log("Firebase Database URL: ", _ref.toString());
+      return _ref;
+    };
+
+    const getEditor = () => {
+      const editor = monaco.editor.create(document.getElementById("editor"), {
+        fontSize: 18,
+        language: "javascript",
+        minimap: {
+          enabled: false,
+        },
+        readOnly: true,
+        theme: "vs-dark",
+        trimAutoWhitespace: false,
+      });
+
+      window.addEventListener("resize", () => {
+        editor.layout();
+      });
+
+      return editor;
+    };
+
+    const onDocumentReady = () => {
+      const randInt = (limit) => (Math.random() * limit) | 0;
+      const userColor = `rgb(${randInt(255)}, ${randInt(255)}, ${randInt(
+        255,
+      )})`;
+      const userId = uuid();
+      const userName = `Anonymous ${randInt(100)}`;
+
+      const editor = getEditor();
+      const databaseRef = getDatabaseRef();
+
+      const collab = new FireMonacoEditor({
+        announcementDuration: Infinity,
+        databaseRef,
+        editor,
+        userId,
+        userColor,
+        userName,
+      });
+
+      collab.on("ready", () => {
+        editor.updateOptions({ readOnly: false });
+      });
+    };
+
+    initializeApp(playgroundConfig.firebase.options);
+
+    setTimeout(onDocumentReady, 0);
+  </script>
+</MainLayout>

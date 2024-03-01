@@ -6,7 +6,11 @@ import { cn } from "@/lib/utils";
 import Icon from "astro-icon";
 ---
 
-<MainLayout title="Operational Transformation" heroAnimation description="A collection of algorithms to synchronize changes across multiple clients">
+<MainLayout
+  title="Operational Transformation"
+  heroAnimation
+  description="A collection of algorithms to synchronize changes across multiple clients"
+>
   <section class="space-y-6 pb-12 pt-16 lg:py-28">
     <div
       class="container flex max-w-[64rem] flex-col items-center gap-5 text-center"
@@ -39,7 +43,7 @@ import Icon from "astro-icon";
           class={cn(buttonVariants({ variant: "outline", size: "lg" }), "px-4")}
         >
           <Icon name="github" class="mr-2 size-5" />
-           Star on Github
+          Star on Github
         </a>
       </div>
     </div>
@@ -58,10 +62,10 @@ import Icon from "astro-icon";
       <p
         class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 balance-text"
       >
-        <span class="text-gradient_indigo-purple">@otjs</span> packages aims to
-        simplify workflows requiring collaboration, starting from ideation,
-        communication and finally execution. Share your ideas and plans with
-        your team seamlessly with Live Collaboration.
+        <span class="text-gradient_indigo-purple">@otjs</span> packages aims to simplify
+        workflows requiring collaboration, starting from ideation, communication
+        and finally execution. Share your ideas and plans with your team seamlessly
+        with Live Collaboration.
       </p>
     </div>
     <div
@@ -97,8 +101,7 @@ import Icon from "astro-icon";
           <div class="space-y-2">
             <h3 class="font-bold">Extensible</h3>
             <p class="text-sm text-muted-foreground">
-              Easy to write custom <b>Adapters</b> for your favourite Editor or
-              Whiteboard.
+              Easy to write custom <b>Adapters</b> for your favourite Editor or Whiteboard.
             </p>
           </div>
         </div>
@@ -121,8 +124,7 @@ import Icon from "astro-icon";
           <div class="space-y-2">
             <h3 class="font-bold">Well Tested Solution</h3>
             <p class="text-sm text-muted-foreground">
-              The packages are santized and tested with <b>95&percnt;</b> code
-              coverage.
+              The packages are santized and tested with <b>95&percnt;</b> code coverage.
             </p>
           </div>
         </div>
@@ -159,7 +161,7 @@ import Icon from "astro-icon";
       >
         Operational Transformation is open source and powered by open source
         software and tools. <br />{" "}
-         The code is available on{" "}
+        The code is available on{" "}
         <a
           href={siteConfig.links.github}
           target="_blank"
@@ -168,7 +170,7 @@ import Icon from "astro-icon";
         >
           GitHub
         </a>
-         .
+        .
       </p>
       <a
         href="https://github.com/sponsors/0xTheProDev"

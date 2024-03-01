@@ -33,10 +33,10 @@ export const navMenuConfig: NavMenuConfig = {
       title: "Docs",
       href: "/docs/getting-started",
     },
-    {
-      title: "Playground",
-      href: "/play",
-    },
+    // {
+    //   title: "Playground",
+    //   href: "/play",
+    // },
     {
       title: "Discussions",
       href: "https://github.com/0xTheProDev/Operational-Transformation/discussions",

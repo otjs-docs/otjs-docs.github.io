@@ -1,0 +1,45 @@
+---
+import { ThemeToggle } from "@/components/theme-toggle";
+import { siteConfig } from "@/config/site";
+
+import Icon from "astro-icon";
+---
+<nav class="flex flex-row items-center gap-4">
+  <a
+    href={siteConfig.links.github}
+    target="_blank"
+    rel="noreferrer"
+    class="hidden md:inline"
+  >
+    <span class="sr-only">GitHub</span>
+    <Icon name="simple-icons:github" class="size-6" />
+  </a>
+  <a
+    href={siteConfig.links.twitter}
+    target="_blank"
+    rel="noreferrer"
+    class="hidden md:inline"
+  >
+    <span class="sr-only">Twitter</span>
+    <Icon name="simple-icons:twitter" class="size-6" />
+  </a>
+  <a
+    href={siteConfig.links.linkedin}
+    target="_blank"
+    rel="noreferrer"
+    class="hidden md:inline"
+  >
+    <span class="sr-only">LinkedIn</span>
+    <Icon name="simple-icons:linkedin" class="size-6" />
+  </a>
+  <a
+    href={siteConfig.links.discord}
+    target="_blank"
+    rel="noreferrer"
+    class="hidden md:inline"
+  >
+    <span class="sr-only">Discord</span>
+    <Icon name="simple-icons:discord" class="size-6" />
+  </a>
+  <ThemeToggle client:idle />
+</nav>

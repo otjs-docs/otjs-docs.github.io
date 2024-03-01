@@ -8,7 +8,9 @@ export const siteConfig: SiteConfig = {
   url: "https://ot.js.org",
   ogImage: "https://ot.js.org/og.jpg",
   links: {
-    twitter: "https://twitter.com/ProDevOfficial",
+    discord: "https://discord.gg/theprodev",
     github: "https://github.com/0xTheProDev/Operational-Transformation",
+    linkedin: "https://linkedin.com/in/progyan-bhattacharya",
+    twitter: "https://twitter.com/ProDevOfficial",
   },
 };

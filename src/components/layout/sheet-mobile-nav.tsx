@@ -99,9 +99,9 @@ export function SheetMobileNav({
               </div>
             ) : null}
 
-            <div className="my-8 grid grid-cols-3 gap-4 items-center justify-items-start">
+            <div className="my-8 grid grid-cols-4 gap-2 items-center justify-items-start">
               <a
-                href="https://github.com/0xTheProDev"
+                href={siteConfig.links.github}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-lg border bg-background p-2"
@@ -109,7 +109,7 @@ export function SheetMobileNav({
                 <GitHub className="size-4" />
               </a>
               <a
-                href="https://twitter.com/ProDevOfficial"
+                href={siteConfig.links.twitter}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-lg border bg-background p-2"
@@ -117,7 +117,7 @@ export function SheetMobileNav({
                 <Twitter className="size-4" />
               </a>
               <a
-                href="https://linkedin.com/in/progyan-bhattacharya"
+                href={siteConfig.links.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-lg border bg-background p-2"
@@ -125,20 +125,12 @@ export function SheetMobileNav({
                 <LinkedIn className="size-4" />
               </a>
               <a
-                href="https://discord.gg/theprodev"
+                href={siteConfig.links.discord}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-lg border bg-background p-2"
               >
                 <Discord className="size-4" />
-              </a>
-              <a
-                href="https://theprodev.medium.com"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-lg border bg-background p-2"
-              >
-                <Medium className="size-4" />
               </a>
             </div>
           </div>

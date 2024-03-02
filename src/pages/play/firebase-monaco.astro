@@ -62,7 +62,7 @@ import Icon from "astro-icon";
     require.config({
       paths: { vs: "https://unpkg.com/monaco-editor@0.34.1/min/vs" },
     });
-    require(["vs/editor/editor.main"]);
+    require(["vs/editor/editor.main", "vs/editor/editor.main.nls"]);
   </script>
 
   <!-- Instantiate Editor -->
@@ -71,11 +71,34 @@ import Icon from "astro-icon";
 
     import { FireMonacoEditor } from "@otjs/firebase-monaco";
     import { initializeApp } from "firebase/app";
+    import { getAuth, signInAnonymously } from "firebase/auth";
     import { child, getDatabase, push, ref } from "firebase/database";
     import { v4 as uuid } from "uuid";
 
+    const randInt = (limit) => (Math.random() * limit) | 0;
+
+    const signInUser = async () => {
+      const auth = getAuth();
+
+      try {
+        await signInAnonymously(auth);
+      } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error("Auth Error", errorCode, errorMessage);
+      } finally {
+        const userColor = `rgb(${randInt(255)}, ${randInt(255)}, ${randInt(
+          255,
+        )})`;
+        const userId = uuid();
+        const userName = `Anonymous ${randInt(100)}`;
+
+        return { userColor, userId, userName };
+      }
+    };
+
     const getDatabaseRef = () => {
-      let _ref = ref(getDatabase());
+      let _ref = ref(getDatabase(), "rooms");
 
       const hash = window.location.hash.replace(/#/g, "");
 
@@ -86,11 +109,26 @@ import Icon from "astro-icon";
         window.location.replace(window.location + "#" + _ref.key); // add it as a hash to the URL.
       }
 
-      console.log("Firebase Database URL: ", _ref.toString());
       return _ref;
     };
 
     const getEditor = () => {
+      window.MonacoEnvironment = {
+        getWorkerUrl: (moduleId, label) => {
+          let path;
+
+          if (moduleId === "editorWorkerService") {
+            path = "editor";
+          } else if (moduleId === "javascript" || moduleId === "typescript") {
+            path = "ts";
+          } else {
+            path = label;
+          }
+
+          return `https://unpkg.com/monaco-editor@0.34.1/min/vs/${path}.worker.js`;
+        },
+      };
+
       const editor = monaco.editor.create(document.getElementById("editor"), {
         fontSize: 18,
         language: "javascript",
@@ -109,13 +147,8 @@ import Icon from "astro-icon";
       return editor;
     };
 
-    const onDocumentReady = () => {
-      const randInt = (limit) => (Math.random() * limit) | 0;
-      const userColor = `rgb(${randInt(255)}, ${randInt(255)}, ${randInt(
-        255,
-      )})`;
-      const userId = uuid();
-      const userName = `Anonymous ${randInt(100)}`;
+    const onDocumentReady = async () => {
+      const { userColor, userId, userName } = await signInUser();
 
       const editor = getEditor();
       const databaseRef = getDatabaseRef();

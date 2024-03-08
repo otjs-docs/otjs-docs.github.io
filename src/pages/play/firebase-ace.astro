@@ -69,12 +69,12 @@ import Icon from "astro-icon";
   <!-- Instantiate Editor -->
   <script>
     import { playgroundConfig } from "@/config/playground";
+    import { getEditor } from "@/lib/playground/ace-helpers";
     import {
       getDatabaseRef,
       getUserInfo,
       signInUser,
     } from "@/lib/playground/firebase-helpers";
-    import { getEditor } from "@/lib/playground/ace-helpers";
 
     import { FireAceEditor } from "@otjs/firebase-ace";
     import { initializeApp } from "firebase/app";

@@ -11,7 +11,7 @@ All installation script in this document are using `pnpm` as package manager. Ki
 
 </Callout>
 
-## 🚀 Most Common Scenario
+## 🚀 Quickstart
 
 More often than not all you need is to synchronise your coding workspaces. For that, `@otjs` comes with two out of the box packages, namely - `@otjs/firebase-ace` and `@otjs/firebase-monaco` for [Ace](https://ace.c9.io/) and [Monaco](https://microsoft.github.io/monaco-editor/) editor respectively.
 
@@ -59,13 +59,14 @@ const fireMonaco = new FireMonacoEditor({
 
 ### ⭐ Examples
 
-<table className="w-full text-left my-8 p-0">
-  <thead className="border-b border-solid">
+<table className="w-full text-left my-8 p-0 table-fixed border-separate border-spacing-4">
+  <caption className="sr-only">Packages and their working examples with descriptions</caption>
+  <thead>
     <tr>
       <th>Example</th>
-      <th>Try it</th>
+      <th>Sandbox (WIP)</th>
       <th>Playground</th>
-      <th>Description</th>
+      <th colspan="2">Description</th>
     </tr>
   </thead>
 
@@ -75,8 +76,10 @@ const fireMonaco = new FireMonacoEditor({
         [Ace + Firebase](https://github.com/0xTheProDev/Operational-Transformation/blob/main/examples/collaborative-editors/src/firebase-ace.ts)
       </td>
       <td></td>
-      <td></td>
       <td>
+        [@otjs/firebase-ace](/play/firebase-ace/)
+      </td>
+      <td colspan="2">
         Complete working example with Ace Editor and Firebase Database using `@otjs/firebase-ace`.
       </td>
     </tr>
@@ -86,8 +89,10 @@ const fireMonaco = new FireMonacoEditor({
         [Monaco + Firebase](https://github.com/0xTheProDev/Operational-Transformation/blob/main/examples/collaborative-editors/src/firebase-monaco.ts)
       </td>
       <td></td>
-      <td></td>
       <td>
+        [@otjs/firebase-monaco](/play/firebase-monaco/)
+      </td>
+      <td colspan="2">
         Complete working example with Monaco Editor and Firebase Database using `@otjs/firebase-monaco`.
       </td>
     </tr>

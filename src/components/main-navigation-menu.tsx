@@ -16,6 +16,7 @@ import { cn } from "@/lib/utils";
 import type { MenuItem } from "@/types";
 
 const infos = navMenuConfig.infosNav[0];
+const resources = navMenuConfig.resourcesNav[0];
 
 export function MainNavigationMenu() {
   return (
@@ -43,6 +44,17 @@ export function MainNavigationMenu() {
 
               {infos.items?.map((info) => (
                 <ListItem key={info.title} {...info} />
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>{resources.title}</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {resources.items?.map((resource) => (
+                <ListItem key={resource.title} {...resource} />
               ))}
             </ul>
           </NavigationMenuContent>

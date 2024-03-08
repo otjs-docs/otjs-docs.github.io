@@ -40,7 +40,10 @@ import Icon from "astro-icon";
           href={siteConfig.links.github}
           target="_blank"
           rel="noreferrer"
-          class={cn(buttonVariants({ variant: "outline", size: "lg" }), "px-4")}
+          class={cn(
+            buttonVariants({ variant: "outline", size: "lg" }),
+            "px-4 z-50",
+          )}
         >
           <Icon name="github" class="mr-2 size-5" />
           Star on Github
@@ -176,7 +179,7 @@ import Icon from "astro-icon";
         href="https://github.com/sponsors/0xTheProDev"
         target="_blank"
         rel="noreferrer"
-        class="underline underline-offset-4"
+        class="underline underline-offset-4 z-50"
       >
         <Icon name="sponsor" class="size-36 rounded -mt-8" />
       </a>

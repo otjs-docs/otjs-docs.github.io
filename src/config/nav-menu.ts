@@ -24,19 +24,39 @@ export const navMenuConfig: NavMenuConfig = {
       ],
     },
   ],
-  links: [
-    // {
-    //   title: "Blog",
-    //   href: "/blog",
-    // },
+  resourcesNav: [
     {
-      title: "Docs",
-      href: "/docs/getting-started",
+      title: "Resources",
+      items: [
+        {
+          title: "Documentation",
+          href: "/docs/getting-started",
+          description: "Get started with your Development journey.",
+        },
+        {
+          title: "Playground",
+          href: "/play/",
+          description:
+            "Try out Collaborative experience without any installation.",
+          launched: true,
+        },
+        {
+          title: "Blogs",
+          href: "/blogs/",
+          description: "Listen to what the community is buzzing about.",
+          disabled: true,
+        },
+        {
+          title: "Tutorials",
+          href: "/tutorials/",
+          description:
+            "Easy step-by-step guide to learn and adopt for developers and enterprises.",
+          disabled: true,
+        },
+      ],
     },
-    // {
-    //   title: "Playground",
-    //   href: "/play",
-    // },
+  ],
+  links: [
     {
       title: "Discussions",
       href: "https://github.com/0xTheProDev/Operational-Transformation/discussions",

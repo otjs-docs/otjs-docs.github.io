@@ -54,15 +54,12 @@ import Icon from "astro-icon";
 
   <!-- ACE and its JavaScript mode and theme files -->
   <script
-    is:inline
     src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"
     crossorigin="anonymous"></script>
   <script
-    is:inline
     src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/mode-javascript.js"
     crossorigin="anonymous"></script>
   <script
-    is:inline
     src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/theme-textmate.js"
     crossorigin="anonymous"></script>
 
@@ -105,7 +102,6 @@ import Icon from "astro-icon";
     };
 
     initializeApp(playgroundConfig.firebase.options);
-
     setTimeout(onDocumentReady, 0);
   </script>
 </MainLayout>

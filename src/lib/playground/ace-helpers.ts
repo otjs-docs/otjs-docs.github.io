@@ -1,7 +1,7 @@
-// @ts-expect-error Module will be loaded into Global Namespace through CDN
-const ace = window.ace;
-
 export const getEditor = () => {
+  // @ts-expect-error Module will be loaded into Global Namespace through CDN
+  const ace = window.ace;
+
   const editor = ace.edit("editor");
   editor.setReadOnly(true);
   editor.setTheme("ace/theme/textmate");

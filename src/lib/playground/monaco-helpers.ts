@@ -1,5 +1,4 @@
-// @ts-expect-error Module will be loaded into Global Namespace through CDN
-const monaco = window.monaco;
+import * as monaco from "monaco-editor";
 
 export const getEditor = () => {
   const editor = monaco.editor.create(document.getElementById("editor"), {

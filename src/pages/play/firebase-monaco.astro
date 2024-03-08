@@ -52,19 +52,6 @@ import Icon from "astro-icon";
     <div id="editor" class="h-full w-full border bg-background"></div>
   </section>
 
-  <!-- RequireJS and Monaco  -->
-  <script
-    is:inline
-    src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"
-    integrity="sha256-0SGl1PJNDyJwcV5T+weg2zpEMrh7xvlwO4oXgvZCeZk="
-    crossorigin="anonymous"></script>
-  <script is:inline>
-    require.config({
-      paths: { vs: "https://unpkg.com/monaco-editor@0.34.1/min/vs" },
-    });
-    require(["vs/editor/editor.main", "vs/editor/editor.main.nls"]);
-  </script>
-
   <!-- Instantiate Editor -->
   <script>
     import { playgroundConfig } from "@/config/playground";

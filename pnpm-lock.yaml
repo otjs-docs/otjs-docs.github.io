@@ -106,6 +106,9 @@ devDependencies:
   mdast-util-toc:
     specifier: 7.0.0
     version: 7.0.0
+  monaco-editor:
+    specifier: 0.33.0
+    version: 0.33.0
   prettier:
     specifier: 3.2.5
     version: 3.2.5

@@ -1,7 +1,7 @@
 lockfileVersion: '6.0'
 
 settings:
-  autoInstallPeers: true
+  autoInstallPeers: false
   excludeLinksFromLockfile: false
 
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
     version: 2.1.1(astro@4.3.0)
   '@astrojs/react':
     specifier: 3.0.9
-    version: 3.0.9(@types/react-dom@18.2.18)(@types/react@18.2.51)(react-dom@18.2.0)(react@18.2.0)(vite@5.0.12)
+    version: 3.0.9(@types/react-dom@18.2.18)(@types/react@18.2.51)(react-dom@18.2.0)(react@18.2.0)
   '@astrojs/rss':
     specifier: 4.0.4
     version: 4.0.4
@@ -80,11 +80,11 @@ dependencies:
 
 devDependencies:
   '@otjs/firebase-ace':
-    specifier: 0.2.2
-    version: 0.2.2(firebase@9.15.0)
+    specifier: 0.2.1
+    version: 0.2.1(firebase@9.15.0)
   '@otjs/firebase-monaco':
-    specifier: 0.2.2
-    version: 0.2.2(firebase@9.15.0)(monaco-editor@0.34.1)
+    specifier: 0.2.1
+    version: 0.2.1(firebase@9.15.0)
   '@tailwindcss/typography':
     specifier: 0.5.10
     version: 0.5.10(tailwindcss@3.4.1)
@@ -121,9 +121,6 @@ devDependencies:
   unist-util-visit:
     specifier: 5.0.0
     version: 5.0.0
-  uuid:
-    specifier: 9.0.1
-    version: 9.0.1
 
 packages:
 
@@ -205,7 +202,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/react@3.0.9(@types/react-dom@18.2.18)(@types/react@18.2.51)(react-dom@18.2.0)(react@18.2.0)(vite@5.0.12):
+  /@astrojs/react@3.0.9(@types/react-dom@18.2.18)(@types/react@18.2.51)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-31J5yF5p9yBFV1axBooLA9PB4B2+MYm7swWhtlezSsJiUNXRFo5Is9qI3teJ7cKgmaCv+ZA593Smskko0NGaDQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -216,7 +213,7 @@ packages:
     dependencies:
       '@types/react': 18.2.51
       '@types/react-dom': 18.2.18
-      '@vitejs/plugin-react': 4.2.1(vite@5.0.12)
+      '@vitejs/plugin-react': 4.2.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       ultrahtml: 1.4.0
@@ -1328,92 +1325,94 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  /@otjs/ace@0.2.2(@otjs/plaintext-editor@0.2.2)(@otjs/plaintext@0.2.2):
-    resolution: {integrity: sha512-KYMJphdYAI1xqZ5vAZfvtdtjzTD4MeEWCy20Yu9ior1JZhDwO4K46Md2AGuzSmNduaFtG6H6YkLWJkKvLzINWw==}
+  /@otjs/ace@0.2.1(@otjs/plaintext-editor@0.2.1)(@otjs/plaintext@0.2.1):
+    resolution: {integrity: sha512-XF8+8LW+b7SveV0IOVlrLzyRt68Ihs+BBdEJYjA+s2+EZidIrHCdr+TG+OaYFeFnb8FShUxXQOLWG0nOn85S7A==}
     peerDependencies:
       '@otjs/plaintext': ^0.2.0
       '@otjs/plaintext-editor': ^0.2.0
-      ace-builds: ^1.14.0
+      ace-builds: 1.4.14
     peerDependenciesMeta:
       ace-builds:
         optional: true
     dependencies:
-      '@otjs/plaintext': 0.2.2
-      '@otjs/plaintext-editor': 0.2.2(@otjs/plaintext@0.2.2)
+      '@otjs/plaintext': 0.2.1
+      '@otjs/plaintext-editor': 0.2.1(@otjs/plaintext@0.2.1)
+      mitt: 3.0.0
     dev: true
 
-  /@otjs/firebase-ace@0.2.2(firebase@9.15.0):
-    resolution: {integrity: sha512-tWtAhARY9bL1WAsT3/SnCseuotOh7LI8xJ1BmlBxNDRyKAVEW6IYeEX3GyWeNKAnhIq3HDNsRxzJydIK1iIqwA==}
+  /@otjs/firebase-ace@0.2.1(firebase@9.15.0):
+    resolution: {integrity: sha512-b1dwRSD2yO1A04+Cq4wxLehUMGSVoBeSdCZD2EjKx10WH1eLlw9J7C+8SDziJxMtTxtnTPEoE9x4IMGQeCDs4w==}
     peerDependencies:
-      ace-builds: ^1.14.0
-      firebase: ^9.15.0
+      ace-builds: ^1.4.14
+      firebase: ^9.6.10
     peerDependenciesMeta:
       ace-builds:
         optional: true
     dependencies:
-      '@otjs/ace': 0.2.2(@otjs/plaintext-editor@0.2.2)(@otjs/plaintext@0.2.2)
-      '@otjs/firebase-plaintext': 0.2.2(@otjs/plaintext-editor@0.2.2)(@otjs/plaintext@0.2.2)(firebase@9.15.0)
-      '@otjs/plaintext': 0.2.2
-      '@otjs/plaintext-editor': 0.2.2(@otjs/plaintext@0.2.2)
+      '@otjs/ace': 0.2.1(@otjs/plaintext-editor@0.2.1)(@otjs/plaintext@0.2.1)
+      '@otjs/firebase-plaintext': 0.2.1(@otjs/plaintext-editor@0.2.1)(@otjs/plaintext@0.2.1)(firebase@9.15.0)
+      '@otjs/plaintext': 0.2.1
+      '@otjs/plaintext-editor': 0.2.1(@otjs/plaintext@0.2.1)
       firebase: 9.15.0
     dev: true
 
-  /@otjs/firebase-monaco@0.2.2(firebase@9.15.0)(monaco-editor@0.34.1):
-    resolution: {integrity: sha512-4aSrdu80CvXD/6CUj3zwFm9sCAq73G+DjNTVmXOnAtsDZE4wy4GPsTHd+5ghfjN4ASLtUaAagZM4I7kxYNkKmg==}
+  /@otjs/firebase-monaco@0.2.1(firebase@9.15.0):
+    resolution: {integrity: sha512-WADO3vMYUn4c8m10pQH68F7K5H1+19SfMz8Y1fq2cwwipLFOjv0JI2C7QFQDIORzfHUuoDTJkG53PE012tvzXg==}
     peerDependencies:
-      firebase: ^9.15.0
-      monaco-editor: ^0.34.0
+      firebase: ^9.6.10
+      monaco-editor: ^0.33.0
     dependencies:
-      '@otjs/firebase-plaintext': 0.2.2(@otjs/plaintext-editor@0.2.2)(@otjs/plaintext@0.2.2)(firebase@9.15.0)
-      '@otjs/monaco': 0.2.2(@otjs/plaintext-editor@0.2.2)(@otjs/plaintext@0.2.2)(monaco-editor@0.34.1)
-      '@otjs/plaintext': 0.2.2
-      '@otjs/plaintext-editor': 0.2.2(@otjs/plaintext@0.2.2)
+      '@otjs/firebase-plaintext': 0.2.1(@otjs/plaintext-editor@0.2.1)(@otjs/plaintext@0.2.1)(firebase@9.15.0)
+      '@otjs/monaco': 0.2.1(@otjs/plaintext-editor@0.2.1)(@otjs/plaintext@0.2.1)
+      '@otjs/plaintext': 0.2.1
+      '@otjs/plaintext-editor': 0.2.1(@otjs/plaintext@0.2.1)
       firebase: 9.15.0
-      monaco-editor: 0.34.1
     dev: true
 
-  /@otjs/firebase-plaintext@0.2.2(@otjs/plaintext-editor@0.2.2)(@otjs/plaintext@0.2.2)(firebase@9.15.0):
-    resolution: {integrity: sha512-3HTLeHDi8pi0DtYKdpEHfNfIAFNxP45zG3+vB4JPdThT6ZzgzeU9Xrar8ErO4z+cxPW/R6OcpbHtvhwSouM5GA==}
+  /@otjs/firebase-plaintext@0.2.1(@otjs/plaintext-editor@0.2.1)(@otjs/plaintext@0.2.1)(firebase@9.15.0):
+    resolution: {integrity: sha512-FPJSpFKHgc+Kan/MSiIPOFJiZgD9PyEUVvlUmFtF/RQtKED+TdTd+pW5f/4pJxVi0Grv3yesMujSQtnQQ1Ch/Q==}
     engines: {node: '>=10.10.0'}
     peerDependencies:
       '@otjs/plaintext': ^0.2.0
       '@otjs/plaintext-editor': ^0.2.0
-      firebase: ^9.15.0
+      firebase: ^9.6.10
     dependencies:
-      '@otjs/plaintext': 0.2.2
-      '@otjs/plaintext-editor': 0.2.2(@otjs/plaintext@0.2.2)
+      '@otjs/plaintext': 0.2.1
+      '@otjs/plaintext-editor': 0.2.1(@otjs/plaintext@0.2.1)
       firebase: 9.15.0
+      mitt: 3.0.0
     dev: true
 
-  /@otjs/monaco@0.2.2(@otjs/plaintext-editor@0.2.2)(@otjs/plaintext@0.2.2)(monaco-editor@0.34.1):
-    resolution: {integrity: sha512-ulFTYcn3tawCPAjAgDpvYgyTNlEeUIV9fgm40Z/bjOulLlDzh5QUbFpLbVYyK/6gYZyXiETUlW4dEKLEml4v7A==}
+  /@otjs/monaco@0.2.1(@otjs/plaintext-editor@0.2.1)(@otjs/plaintext@0.2.1):
+    resolution: {integrity: sha512-874iPNl4kW2wEpAuHPsZ0l9CpsLQWB1dtvtWh+sw9cmUmcYVds2CFhzdhlFKP8eqxzNgjAB8bRgIx134iMfwfg==}
     peerDependencies:
       '@otjs/plaintext': ^0.2.0
       '@otjs/plaintext-editor': ^0.2.0
-      monaco-editor: ^0.34.0
+      monaco-editor: ^0.33.0
     dependencies:
-      '@otjs/plaintext': 0.2.2
-      '@otjs/plaintext-editor': 0.2.2(@otjs/plaintext@0.2.2)
-      monaco-editor: 0.34.1
+      '@otjs/plaintext': 0.2.1
+      '@otjs/plaintext-editor': 0.2.1(@otjs/plaintext@0.2.1)
+      mitt: 3.0.0
     dev: true
 
-  /@otjs/plaintext-editor@0.2.2(@otjs/plaintext@0.2.2):
-    resolution: {integrity: sha512-BR4Nv2VsIegaX3oE+MPTNnRKX3aJbWr7C3vB87aNp3CCNdDwDWHL3W9cK436n+APlk8q+QYOJwlwq6p24gznYw==}
+  /@otjs/plaintext-editor@0.2.1(@otjs/plaintext@0.2.1):
+    resolution: {integrity: sha512-5PxoSSa6receI7UrUKMzXtjQ+viByKvoQkYaq+pY4zol7Xjs69A7pzLdmtmvpLTCItdFGXZWpe9tTZvadTAb8g==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       '@otjs/plaintext': ^0.2.0
     dependencies:
-      '@otjs/plaintext': 0.2.2
-      '@otjs/state-machine': 0.2.2
+      '@otjs/plaintext': 0.2.1
+      '@otjs/state-machine': 0.2.1
+      mitt: 3.0.0
     dev: true
 
-  /@otjs/plaintext@0.2.2:
-    resolution: {integrity: sha512-FyUyoaj8+iY/mPQ26UTpKAZ0x7PUwyVj6G/FszLLW6qIeTUIJ9sc4Xs2w2RDyO78O40lrFy18bDQMPh8LmxF8w==}
+  /@otjs/plaintext@0.2.1:
+    resolution: {integrity: sha512-3o++1X2Sva6K6iVJCcwZxOp4Nlg3aPbST2c08Jlx0Aw7+PRE+arOCsGg2lgBgBiJEo8rI0fgpBCUrH5F0OtWKg==}
     engines: {node: '>=10.0.0'}
     dev: true
 
-  /@otjs/state-machine@0.2.2:
-    resolution: {integrity: sha512-NC5nr5ip8wZvRiXCEjklRbWc+hYNOen7ZyEarsWt3uM5EWBPTd7KBCDvSnGyxk+f1jQ3prDftNlKhMJj+TFWHg==}
+  /@otjs/state-machine@0.2.1:
+    resolution: {integrity: sha512-tRAOOxyQiGKzMH+ZVuPFwENNdwwy30FwqLf3Oejtxt0dpjPSlMxCaz+jlrXXP5VpFwRMkpWgNXm0AEyJQlJHpg==}
     engines: {node: '>=10.0.0'}
     dev: true
 
@@ -2309,7 +2308,7 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  /@vitejs/plugin-react@4.2.1(vite@5.0.12):
+  /@vitejs/plugin-react@4.2.1:
     resolution: {integrity: sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -2320,7 +2319,6 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.6)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.0.12(sass@1.71.1)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -4529,15 +4527,15 @@ packages:
     dev: false
     optional: true
 
+  /mitt@3.0.0:
+    resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==}
+    dev: true
+
   /mkdirp-classic@0.5.3:
     resolution: {integrity: sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==}
     requiresBuild: true
     dev: false
     optional: true
-
-  /monaco-editor@0.34.1:
-    resolution: {integrity: sha512-FKc80TyiMaruhJKKPz5SpJPIjL+dflGvz4CpuThaPMc94AyN7SeC9HQ8hrvaxX7EyHdJcUY5i4D0gNyJj1vSZQ==}
-    dev: true
 
   /ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
@@ -6001,11 +5999,6 @@ packages:
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
-
-  /uuid@9.0.1:
-    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
-    hasBin: true
-    dev: true
 
   /vfile-location@5.0.2:
     resolution: {integrity: sha512-NXPYyxyBSH7zB5U6+3uDdd6Nybz6o6/od9rk8bp9H8GR3L+cm/fC0uUTbqBmUTnMCUDslAGBOIKNfvvb+gGlDg==}

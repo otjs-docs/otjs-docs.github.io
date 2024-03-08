@@ -46,8 +46,8 @@
     "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
-    "@otjs/firebase-ace": "0.2.2",
-    "@otjs/firebase-monaco": "0.2.2",
+    "@otjs/firebase-ace": "0.2.1",
+    "@otjs/firebase-monaco": "0.2.1",
     "@tailwindcss/typography": "0.5.10",
     "@types/react": "18.2.51",
     "@types/react-dom": "18.2.18",
@@ -59,7 +59,6 @@
     "prettier-plugin-astro": "0.13.0",
     "remark": "15.0.1",
     "sass": "1.71.1",
-    "unist-util-visit": "5.0.0",
-    "uuid": "9.0.1"
+    "unist-util-visit": "5.0.0"
   }
 }

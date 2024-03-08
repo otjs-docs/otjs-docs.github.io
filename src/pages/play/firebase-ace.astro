@@ -69,69 +69,19 @@ import Icon from "astro-icon";
   <!-- Instantiate Editor -->
   <script>
     import { playgroundConfig } from "@/config/playground";
+    import {
+      getDatabaseRef,
+      getUserInfo,
+      signInUser,
+    } from "@/lib/playground/firebase-helpers";
+    import { getEditor } from "@/lib/playground/ace-helpers";
 
     import { FireAceEditor } from "@otjs/firebase-ace";
     import { initializeApp } from "firebase/app";
-    import { getAuth, signInAnonymously } from "firebase/auth";
-    import { child, getDatabase, push, ref } from "firebase/database";
-    import { v4 as uuid } from "uuid";
-
-    const randInt = (limit) => (Math.random() * limit) | 0;
-
-    const signInUser = async () => {
-      const auth = getAuth();
-
-      try {
-        await signInAnonymously(auth);
-      } catch (error) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error("Auth Error", errorCode, errorMessage);
-      } finally {
-        const userColor = `rgb(${randInt(255)}, ${randInt(255)}, ${randInt(
-          255,
-        )})`;
-        const userId = uuid();
-        const userName = `Anonymous ${randInt(100)}`;
-
-        return { userColor, userId, userName };
-      }
-    };
-
-    const getDatabaseRef = () => {
-      let _ref = ref(getDatabase(), "rooms");
-
-      const hash = window.location.hash.replace(/#/g, "");
-
-      if (hash) {
-        _ref = child(_ref, hash);
-      } else {
-        _ref = push(_ref); // generate unique location.
-        window.location.replace(window.location + "#" + _ref.key); // add it as a hash to the URL.
-      }
-
-      return _ref;
-    };
-
-    const getEditor = () => {
-      const editor = ace.edit("editor");
-      editor.setReadOnly(true);
-      editor.setTheme("ace/theme/textmate");
-
-      const session = editor.getSession();
-      session.setUseWrapMode(true);
-      session.setUseWorker(false);
-      session.setMode("ace/mode/javascript");
-
-      window.addEventListener("resize", () => {
-        editor.resize(true);
-      });
-
-      return editor;
-    };
 
     const onDocumentReady = async () => {
-      const { userColor, userId, userName } = await signInUser();
+      const user = await signInUser();
+      const { userColor, userId, userName } = await getUserInfo(user);
 
       const editor = getEditor();
       const databaseRef = getDatabaseRef();
@@ -147,6 +97,10 @@ import Icon from "astro-icon";
 
       collab.on("ready", () => {
         editor.setReadOnly(false);
+      });
+
+      collab.on("error", (error) => {
+        console.error("Collaboration Error", error);
       });
     };
 

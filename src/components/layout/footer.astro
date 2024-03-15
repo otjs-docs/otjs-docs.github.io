@@ -1,5 +1,6 @@
 ---
 import { cn } from "@/lib/utils";
+import SocialMedia from "./social-media.astro";
 
 type Props = {
   className?: string;
@@ -13,12 +14,11 @@ const { className } = Astro.props;
     class="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0"
   >
     <div
-      class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0 z-50"
+      class="flex flex-col items-center gap-8 px-0 md:px-8 md:justify-around md:w-full z-50"
     >
-      Copyright <a href="/" aria-label="Otjs homepage"> &copy; </a>
-
       <p class="text-center text-sm leading-loose md:text-left balance-text">
-        All rights reserved by{" "}
+        <a href="/" aria-label="Otjs homepage">Copyright &copy;</a>
+        All rights reserved by
         <a
           href="https://twitter.com/ProDevOfficial"
           target="_blank"
@@ -26,45 +26,10 @@ const { className } = Astro.props;
           class="font-medium underline underline-offset-4"
         >
           0xTheProDev
-        </a>
-        . Template Built by{" "}
-        <a
-          href="https://twitter.com/miickasmt"
-          target="_blank"
-          rel="noreferrer"
-          class="font-medium underline underline-offset-4"
-        >
-          mickasmt
-        </a>
-        . Based on{" "}
-        <a
-          href="https://github.com/shadcn-ui/taxonomy"
-          target="_blank"
-          rel="noreferrer"
-          class="font-medium underline underline-offset-4"
-        >
-          shadcn-ui/taxonomy
-        </a>
-        . Hosted on{" "}
-        <a
-          href="https://pages.github.com"
-          target="_blank"
-          rel="noreferrer"
-          class="font-medium underline underline-offset-4"
-        >
-          GitHub Pages
-        </a>
-        . The source code is available on{" "}
-        <a
-          href="https://github.com/0xTheProDev/otjs"
-          target="_blank"
-          rel="noreferrer"
-          class="font-medium underline underline-offset-4"
-        >
-          GitHub
-        </a>
-        .
+        </a>.
       </p>
+
+      <SocialMedia className="md:hidden" />
     </div>
   </div>
 </footer>

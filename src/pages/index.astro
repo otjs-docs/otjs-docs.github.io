@@ -172,17 +172,32 @@ import Icon from "astro-icon";
           class="underline underline-offset-4"
         >
           GitHub
-        </a>
-        .
+        </a> under MIT License.
       </p>
-      <a
-        href="https://github.com/sponsors/0xTheProDev"
-        target="_blank"
-        rel="noreferrer"
-        class="underline underline-offset-4 z-50"
-      >
-        <Icon name="sponsor" class="size-36 rounded -mt-8" />
-      </a>
+
+      <div class="flex justify-center space-x-2 md:space-x-4">
+        <a
+          href="https://github.com/sponsors/0xTheProDev"
+          target="_blank"
+          rel="noreferrer"
+          class={cn(buttonVariants({ size: "lg" }), "z-50")}
+        >
+          <Icon name="mdi:hand-heart" class="mr-2 size-5" />
+          Sponsor
+        </a>
+        <a
+          href="https://opensource.org/osd"
+          target="_blank"
+          rel="noreferrer"
+          class={cn(
+            buttonVariants({ variant: "outline", size: "lg" }),
+            "px-4 z-50",
+          )}
+        >
+          <Icon name="simple-icons:opensourceinitiative" class="mr-2 size-5" />
+          Read more about Open Source
+        </a>
+      </div>
     </div>
   </section>
 </MainLayout>

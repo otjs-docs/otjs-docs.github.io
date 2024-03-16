@@ -30,8 +30,7 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Basics of Database",
-          href: "/docs/database-basics",
-          disabled: true,
+          href: "/docs/basics-of-database",
         },
         {
           title: "Consistency Models",

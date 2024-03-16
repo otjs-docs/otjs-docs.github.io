@@ -1,0 +1,38 @@
+---
+title: Basics of Database
+description: A Quick Recap to What DBMS World has been upto.
+---
+
+> “We're entering a new world in which data may be more important than software.” - Tim O'Reilly,
+
+## 🗃️ Data & Databases
+
+Moving into 21st Century is mostly if not all about Data and what they tell us about our reality. The term <strong>Data</strong> can be defined as an atomic unit of information available in a system. <strong>Database</strong>, on top of it, is a mechanism to store and retrieve a significant amount of data in a system. More often than not we use the term <strong>DBMS</strong>, i.e., Database Management System interchangeably with Database.
+
+Data can exist in various shapes and forms, and so can Databases. Based on the nature and volume of the Data, a Database can live in File System, Block Storage or even Cloud Clusters. A design of such Database must consider the ease of Data Modeling, Data Querying, Privacy, Security etc. along with Cost-effective Storage. For a distributed Database, concurrency and fault tolerance also play an important aspect.
+
+## 📌 Different Types of Databases
+
+### 👥 Relational Databases
+
+Most famous and widely adopted flavour of Database is Relational Database, often having a standard language for interacting with system for the definition and manipulation of Data known as <strong>SQL</strong>. Relational Database existed as early as 1970, and the pioneering research was done by [IBM](https://ibm.com). The idea was to have multiple structured representation of data known as Tables that are interconnected via Pointers as their relationship would in real life. But it was not until late 1970s that IBM would release it's proprietary Database software [DB2](https://www.ibm.com/products/db2) which came bundled with first SQL. [Oracle](https://oracle.com) would also launch it's own proprietary database Oracle Database around the same time.
+
+### 🔐 Key Value Databases
+
+Another set of Databases that has became de-facto for Application development is Key Value Database or Object Oriented Database. Due their immense speed, they are often used as Caching proxy in front of more general purpose Relational Database. Key Value database leverages raw speed of Random Access Memory to facilitate high throughput of transaction. Some of the Key Value Database also allows long term persistance using Solid State or Rotating Disc drives. The pioneers on this domain are [etcd](https://etcd.io/), [Remote Dictionary Server (better known as Redis)](https://redis.io/) and [Memcached](https://memcached.org/).
+
+### 📄 Wide Column Databases
+
+Wide Column Databases merges ideas from both Relational Database as it is table-oriented, and from Key Value Databases as it is implemented as two-dimensional key value pairs. The fundamental concept behind a Wide Column Database is to have more flexibility around Column definitions, i.e., it can vary from row to row within the same table. [Apache Cassandra](https://cassandra.apache.org/) and [Google's BigTable](https://cloud.google.com/bigtable/) are notable examples in this category.
+
+### 🗒️ Document Oriented Database
+
+The primitive idea behind Document Oriented Database is the concept of <strong>Document</strong> and the design is based upon it's efficient retrieval strategies including Full-text Search capabilities. The document is defined as an unit of information and is encoded into the system with one of the encodings including XML, JSON, YAML or even BSON. Often this Databases generate additional metadata about the documents and stores along with it. This facilitate interoperability despite having flexibility in the structures of the documents. This type of Databases are widely adopted in Search Engine or similar application use-cases. Some of the notable examples of Document Oriented Databases are - [ElasticSearch](https://www.elastic.co/elasticsearch), [MongoDB](http://mongodb.com/), [DynamoDB](http://aws.amazon.com/dynamodb/) and [Apache CouchDB](https://couchdb.apache.org/).
+
+### 📈 Graph Databases
+
+Graph Databases are Document Oriented Database with an additional dimension for Network or Relationship among nodes of documents. In this paradigm, Relationships are first-class citizen and can well be labelled, directed and even be provided with additional properties and metadata. Hence Tables in such Databases live one abstraction above. This makes querying Relationships faster than alternative solutions. Graph Databases can exist with Hierarchial Model, Logical Data Model, Object Data Model or even as combination of multiple such models. This kind of databases became popular in late 20s as Social Media companies became popular and a need to analysis their Networks became a problem statement. Notable example of such databases are - [Amazon Neptune](https://aws.amazon.com/neptune/), [SAP HANA](https://www.sap.com/products/hana.html), [Neo4j](https://neo4j.com/) etc.
+
+### 📐 Vector Databases
+
+Vector Databases are a Heuristically Approximate representation of Graph Databases. The simply contain one or more variation of Approximate Nearest Neighbor algorithms to query Nodes within a reasonable tolerance in a Network. This allows the consumer to get Records even within the vicinity of the Query vector even if there is no exact match. This kind of databases are widely adopted in Machine Learning use cases to both store embeddings as collection of Feature Vectors or Dimensions, as well as Query them against a given set of Vectors. This makes them very useful for building Similarity Search, Recommendation Engines, Large Language Models etc. Some of the popular Vector Databases are [SurrealDB](https://surrealdb.com/), [CosmosDB](https://azure.microsoft.com/en-us/services/cosmos-db/) etc. Mind you this field is still quite nascent and growing in a rapid pace.

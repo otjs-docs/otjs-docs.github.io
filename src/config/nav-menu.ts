@@ -17,9 +17,8 @@ export const navMenuConfig: NavMenuConfig = {
         },
         {
           title: "Concepts",
-          href: "/docs/database-basics",
+          href: "/docs/basics-of-database",
           description: "Know what's going behind the scenes.",
-          disabled: true,
         },
       ],
     },

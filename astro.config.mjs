@@ -10,7 +10,7 @@ export default defineConfig({
   compressHTML: true,
   integrations: [
     mdx({
-      syntaxHighlight: 'shiki',
+      syntaxHighlight: "shiki",
       shikiConfig: { theme: 'github-dark-dimmed' },
       gfm: true,
     }),
@@ -23,5 +23,8 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'viewport',
+  },
+  redirects: {
+    "/docs": "/docs/getting-started"
   },
 });

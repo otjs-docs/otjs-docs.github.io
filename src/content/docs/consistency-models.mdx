@@ -1,0 +1,44 @@
+---
+title: Consistency Models
+description: A Quick Overview on Consistency Models used in Traditional Databases.
+---
+
+> “​ Consensus is one of the most important and fundamental problems in distributed computing. On the surface, it seems simple: informally, the goal is simply to get several nodes to agree on something.” ― Martin Kleppmann
+
+## ✅ Definitions
+
+An unit of Data is said to be <strong>consistent</strong> if all the stakeholders of that unit of data agrees upon it's state. In a Distributed System, the programmers and users, when adding, updating or retrieving, are to abide by certain rules to achieve a predictable outcome. Simply put, we want to know ahead of the time what would be the effect on all other users subscribed to same information if we perform an action on it. These rules collectively known as a <strong>Consistency Model</strong> and dictates the guideline for programmers using them. Use cases for such models spans across File Systems, Databases, Web Caching, Messaging etc.
+
+## 📝 Broad Classification of Consistency Models
+
+At the core, all Consistency Models can be classified into two groups - Strong and Weak Consistency Models.
+
+### 🛡️ Strong Consistency Model
+
+Strong Consistency models are bound to provide programmers and users with utmost latest state of the system before a WRITE can take place preventing a <strong>Stale Write</strong>. Now there is variability in how this constraint gets ensured and we will discuss few of them below:
+
+1. <strong>Strict Consistency</strong> - The Strict Consistency dictates every WRITE operation is propagated to every processing node almost instantly making Stale Writes impossible. It must be noted that this is a theoretical model and can never be implemented as no physical device can transmit messages instantly.
+
+2. <strong>Sequential Consistency</strong> - This model does not constrain the transmission of information into an instant action, rather it focuses on <strong>Isolation</strong> and ensures an order of execution of WRITEs among all the processing nodes. This model is implemented with two inherent requirements - <strong>Program Order</strong> and <strong>Write Atomicity</strong> that makes it possible to process request in such a manner that it appears as "instantly". Despite being a Strong Consistent model, only weaker than Strict Consistency, it can produce non-deterministic results as the order of the processing could be arbitrary.
+
+3. <strong>Casual Consistency</strong> - This is an improvement over Sequential Consistency in order to deter dependent processing and increase overall throughput. Casual Consistency model classifies all operations into two buckets - Casually Related and Others, and applies Sequential Consistency constraints only to those in Casually Related bucket.
+
+### 🧵 Weak Consistency Model
+
+Weak Consistency Models offload the responsibility of creating state to the programmers who are using that systems. This is done to increase the throughput to an insane level, allowing high-traffic applications to be built on top of it. Some of these consistency models are listed as below:
+
+1. <strong>Weak Ordering Consistency</strong> - This model is based on the hypothesis that not all operation in a system is critical in nature and only those that are critical in nature requires synchronization. Thus it classifies all operations into two categories - Data Operations and Synchronization Operations. Program order and atomicity is maintained only on synchronization operations and not on all reads and writes.
+
+2. <strong>Release Consistency</strong> - This model bifurcates WRITE operation into two parts. During entry to the critical section, a lock is "Acquired" and all writes are done on local memory of the node; during exit, the lock is "Released" and writes are propagated to all other nodes.
+
+3. <strong>Entry Consistency</strong> - Entry Consistency narrows the scope of lock compared to Release Consistency by defining Shared Variables and assigning local variable to them accordingly. This way, only when the acquire is to variable `x`, all operations related to `x` need to be completed with respect to that processor. This allows concurrent operations of different critical sections of different shared variables to occur.
+
+## ⏳ Eventual Consistency Model
+
+Eventual Consistency is a Weak Consistency model in a system with the lack of simultaneous updates. It defines that if no update takes a very long time, all replicas eventually become consistent. In such model goes through a Divergence and a Converged state each time an operation takes place. The state of a node in between two Converged state often termed as <strong>Soft State</strong>. With multiple soft states in their corresponding nodes, each nodes must share their version of the state (often known as <strong>Anti-entropy</strong>) and then compute and execute a merge to arrive to the final state (often called <strong>Reconciliation</strong>).
+
+This model is very effective when the volume of transactions is high but the turn-around time for each operation is very small making the system <strong>Highly Available</strong>. However, the value READ in between Converged State of a node is non-deterministic and often can be unsafe for usage.
+
+## 🧪 How it applies to Databases - ACID vs BASE
+
+## 🥽 Conclusion

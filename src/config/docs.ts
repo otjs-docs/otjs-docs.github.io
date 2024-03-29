@@ -34,8 +34,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Consistency Models",
-          href: "/docs/consistency",
-          disabled: true,
+          href: "/docs/consistency-models",
         },
         {
           title: "History of Web Editors",

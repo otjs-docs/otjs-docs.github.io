@@ -39,6 +39,18 @@ Eventual Consistency is a Weak Consistency model in a system with the lack of si
 
 This model is very effective when the volume of transactions is high but the turn-around time for each operation is very small making the system <strong>Highly Available</strong>. However, the value READ in between Converged State of a node is non-deterministic and often can be unsafe for usage.
 
+### 🥽 Strong Eventual Consistency
+
+Whereas eventual consistency is only a <strong>Liveness Guarantee</strong> (updates will be observed eventually), strong eventual consistency (SEC) adds the <strong>Safety Guarantee</strong> that any two nodes that have received the same (unordered) set of updates will be in the same state. If, furthermore, the system is monotonic, the application will never suffer rollbacks.
+
 ## 🧪 How it applies to Databases - ACID vs BASE
 
-## 🥽 Conclusion
+The term <strong>ACID</strong> which is an acronym for Atomicity, Consistency, Isolation and Durability, was coined as a concept to understand Database Transactions in Traditional Databases, namely SQL Databases. <strong>BASE</strong> on the other hand used to describe Transactions in NoSQL Databases as a sequence of Basically Available, Soft State and Eventually Consistent.
+
+<strong>Atomicity</strong> guarantees failure of a Transaction under Strong Consistency model in case of at least one failure within the block of the transaction. This ensures that the Database never goes into an inconsistent state for each and every situation, including power failures, errors, and crashes. This gets followed up by <strong>Isolation</strong> guarantee that executes multiple transactions in parallel to produce end state such that it appears as if they have been executed sequentially. And <strong>Durability</strong> simply means that the resultant state gets backed-up into no-volatile memory to be preserved.
+
+Databases that follows ACID are widely adopted across the industry due the constraints it follows and hence produces only clean state of the application. However, due to the same constraints, the database at scale obtains limits to it's Availability and Concurrency. To overcome this burden, some of this constraints are loosen up. It introduces Soft States between WRITE updates that can converge at a given time making the system Eventually Consistent. This means at any point in time, READ requests might not be able to provide the state post latest WRITE requests, and WRITE request might well be overwritten or reformed against latest state of the Database.
+
+Most of the modern decentralized databases are a mix of both qualities as they provide both Availability and Liveness Guarantees as well as Safety Guarantee. Hence they are called <strong>SALT</strong> Databases, i.e., Sequential, Agreed, Ledgered and Tamper-resistant.
+
+Now that we are well versed with Consistency Models and how they are adopted inside Databases, let us take short tour on Web based Editors before we understand how <strong>Operational Transformation</strong> fits into all these.

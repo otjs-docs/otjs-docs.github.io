@@ -30,12 +30,16 @@ export type SidebarNavItem = {
 
 export type SiteConfig = {
   name: string;
+  shortName: string;
   description: string;
   url: string;
   ogImage: string;
   links: {
-    twitter: string;
+    discord: string;
+    gitlab: string;
     github: string;
+    linkedin: string;
+    twitter: string;
   };
 };
 

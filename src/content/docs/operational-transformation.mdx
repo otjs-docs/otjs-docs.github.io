@@ -1,0 +1,102 @@
+---
+title: Operational Transformation
+description: Learn about Operational Transformation, a key technique for real-time collaborative editing.
+---
+
+> “The original idea of the web was that it should be a collaborative space where you can communicate through sharing information.” — Tim Berners-Lee
+
+## ✅ Definition
+
+**Operational Transformation (OT)** is a method used in collaborative systems to allow multiple users to edit the same document concurrently while keeping all copies consistent.
+
+OT ensures that every participant's version of the document *converges* to the same final state, regardless of the order or timing of operations.
+
+## 🎯 Objectives
+
+The main objectives of OT are:
+
+1. **Convergence** — All document replicas eventually reach the same state.
+2. **Causality Preservation** — The relative order of dependent operations is maintained.
+3. **Intention Preservation** — Each user's intent is preserved, even when edits conflict.
+4. **Low Latency** — Edits appear instantly on the local client without waiting for synchronization.
+
+## 🕰 History
+
+### Origins
+
+Operational Transformation was first proposed by **C. A. Ellis and S. J. Gibbs** in their 1989 paper *“Concurrency Control in Groupware Systems.”* ([Read the paper](https://dl.acm.org/doi/10.1145/62084.62093))
+Their system, **GRACE**, was one of the earliest collaborative editors that allowed users to edit shared content simultaneously without explicit locking.
+
+### Evolution
+
+- **1990s:** Research refined OT algorithms to ensure mathematical guarantees of convergence and intention preservation (e.g., **GROVE**, **adOPTed**).
+- **2000s:** The web matured; OT began appearing in early online editors and academic prototypes.
+- **2010s+:** OT reached mainstream adoption through libraries like **[@otjs](https://ot.js.org)**, **[ShareJS](https://github.com/share/sharedb)**, and products like **[Firepad](https://github.com/FirebaseExtended/firepad)** and **[Google Docs](https://workspace.google.com/products/docs/)**.
+
+## ⚙️ Concept
+
+1. **Local Operation:** A user performs an edit (e.g., insert a character at index 10).
+2. **Broadcast:** The operation is sent to other clients or a central server.
+3. **Transformation:** Concurrent remote operations are adjusted so both can apply cleanly.
+4. **Application:** The transformed operation is applied to the local document, preserving consistency and user intent.
+
+## 📐 Core Algorithms
+
+### • Jupiter (Client-Server Model)
+Developed by Google for real-time collaboration. Each client maintains a buffer of unacknowledged operations. The server serializes all incoming operations and returns transformed versions to ensure consistency.
+
+### • adOPTed (1996)
+Introduced by C. Ressel et al. Defines **Transformation Properties (TP1, TP2)** that guarantee convergence and intention preservation. ([Read more](https://dl.acm.org/doi/10.1145/229542.229546))
+
+### • GOT and SOCT2
+Focus on large or structured documents, extending OT principles beyond simple text editing.
+
+## 🧩 Implementations
+
+### 🔹 @otjs
+
+A lightweight JavaScript library implementing OT for text synchronization.
+- Provides primitive types for text operations and transformation logic.
+- Includes client-server synchronization patterns.
+- Enables developers to embed collaborative editing into browsers and Node.js apps.
+- **Website:** [https://ot.js.org](https://ot.js.org)
+
+### 🔹 Firepad
+
+An open-source collaborative text and code editor by Firebase.
+- Uses Firebase's Realtime Database as a transport layer.
+- Relies on OT for reconciling concurrent edits.
+- Integrates easily with editors like **[CodeMirror](https://codemirror.net/)** and **[Ace](https://ace.c9.io/)**.
+- **GitHub:** [https://github.com/FirebaseExtended/firepad](https://github.com/FirebaseExtended/firepad)
+
+## 💡 Example Use Cases
+
+Operational Transformation is widely used in systems requiring **real-time, concurrent editing** or **state synchronization** across users:
+
+- Real-time collaborative document editors (e.g., [Google Docs](https://workspace.google.com/products/docs/)-like apps).
+- Cloud-based code editors and IDEs (e.g., Firepad integrations, online pair programming).
+- Shared whiteboard and diagramming tools (e.g., collaborative design apps).
+- Markdown and note-taking apps with multi-user sessions.
+- Real-time educational tools where students co-edit assignments or code.
+- Content-management platforms with concurrent editorial workflows.
+- In-browser multiplayer creative tools (music sequencers, level editors, etc.).
+
+## ✅ Advantages
+
+- Enables seamless collaboration without user locks.
+- Provides immediate feedback for local edits.
+- Ensures global consistency despite network latency.
+- Flexible model that can support text, JSON, or other data structures with the right transformation logic.
+
+## ⚠️ Challenges
+
+- Writing correct transformation functions is complex and error-prone.
+- Difficult to extend to deeply structured or hierarchical data.
+- Requires careful handling of undo/redo and offline edits.
+- Network synchronization logic must be designed for resilience and ordering.
+
+## 📘 Summary
+
+Operational Transformation is a foundational technology for real-time collaboration.
+From its academic roots in the 1980s to practical libraries like **[@otjs](https://ot.js.org)** and **[Firepad](https://github.com/FirebaseExtended/firepad)**, OT continues to power modern applications that let people create together in real time.
+It remains one of the most important techniques in the design of collaborative web applications.

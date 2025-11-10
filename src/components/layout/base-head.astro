@@ -1,7 +1,7 @@
 ---
 import { siteConfig } from "@/config/site";
 import "@/styles/globals.css";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -44,6 +44,27 @@ const {
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 <meta name="generator" content={Astro.generator} />
 
+<!-- Schema Markup -->
+<!-- <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "Banana Bread Recipe",
+    "description": "The best banana bread recipe you'll ever find! Learn how to use up all those extra bananas.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.7,
+      "ratingCount": 123
+    },
+    "video": {
+      "@type": "VideoObject",
+      "name": "How To Make Banana Bread",
+      "description": "This is how you make banana bread, in 5 easy steps.",
+      "contentUrl": "https://www.example.com/video123.mp4"
+    }
+  }
+</script> -->
+
 <!-- Font preloads -->
 <link
   rel="preload"
@@ -60,6 +81,10 @@ const {
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta
+  content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+  name="robots"
+/>
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -103,4 +128,4 @@ const {
   document.addEventListener("astro:after-swap", setDarkMode);
 </script>
 
-<ViewTransitions />
+<ClientRouter />

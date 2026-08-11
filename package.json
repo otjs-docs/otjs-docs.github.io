@@ -24,6 +24,13 @@
     "@astrojs/react": "4.3.0",
     "@astrojs/rss": "4.0.12",
     "@astrojs/sitemap": "3.5.1",
+    "@iconify-json/ant-design": "1.2.5",
+    "@iconify-json/codicon": "1.2.31",
+    "@iconify-json/ic": "1.2.4",
+    "@iconify-json/lucide": "1.2.73",
+    "@iconify-json/mdi": "1.2.3",
+    "@iconify-json/ph": "1.2.2",
+    "@iconify-json/simple-icons": "1.2.58",
     "@radix-ui/react-accordion": "1.2.12",
     "@radix-ui/react-dialog": "1.1.15",
     "@radix-ui/react-navigation-menu": "1.2.14",
@@ -61,6 +68,7 @@
     "prettier-plugin-astro": "0.14.1",
     "remark": "15.0.1",
     "sass": "1.90.0",
+    "sharp": "0.34.5",
     "unist-util-visit": "5.0.0"
   },
   "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b"

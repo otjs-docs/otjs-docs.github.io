@@ -1,6 +1,7 @@
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
+import sharp from "sharp";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
@@ -9,6 +10,9 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://ot.js.org",
   compressHTML: true,
+  image: {
+    service: sharp(),
+  },
   integrations: [
     icon(),
     react(),

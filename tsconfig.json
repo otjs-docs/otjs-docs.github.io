@@ -1,5 +1,5 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "@theprodev/tsconfigs/astro",
   "compilerOptions": {
     "strictNullChecks": true,
     "jsx": "react-jsx",
@@ -8,5 +8,7 @@
     "paths": {
       "@/*": ["src/*"]
     }
-  }
+  },
+  "include": [".astro/types.d.ts", "**/*.ts", "**/*.tsx", "**/*.astro"],
+  "exclude": ["node_modules", "dist"]
 }

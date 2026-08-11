@@ -49,6 +49,7 @@
     "@otjs/firebase-ace": "0.2.2",
     "@otjs/firebase-monaco": "0.2.2",
     "@tailwindcss/typography": "0.5.16",
+    "@theprodev/tsconfigs": "0.3.0",
     "@types/react": "19.1.11",
     "@types/react-dom": "19.1.7",
     "firebase": "~12.1.0",

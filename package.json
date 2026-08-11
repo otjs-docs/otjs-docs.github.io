@@ -3,7 +3,7 @@
   "private": true,
   "description": "Documentation site for Operational Transformation Package",
   "scripts": {
-    "dev": "astro dev --host 0.0.0.0 --verbose",
+    "dev": "astro dev --host 0.0.0.0",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",

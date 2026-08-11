@@ -38,13 +38,11 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "History of Web Editors",
-          href: "/docs/web-editors",
-          disabled: true,
+          href: "/docs/history-of-web-editors",
         },
         {
           title: "Operational Transformation",
           href: "/docs/operational-transformation",
-          disabled: true,
         },
         {
           title: "Alernative - Conflict-free Replicated Data Types",

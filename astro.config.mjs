@@ -1,5 +1,6 @@
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
+import icon from "astro-icon";
 import react from "@astrojs/react";
 import sharp from "sharp";
 import sitemap from "@astrojs/sitemap";

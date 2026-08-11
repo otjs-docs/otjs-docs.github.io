@@ -72,9 +72,9 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
-        "sky": {
+        sky: {
           from: { transform: "rotate(45deg)" },
-          to: { transform: "rotate(45 + 360deg)" }
+          to: { transform: "rotate(45 + 360deg)" },
         },
       },
       animation: {

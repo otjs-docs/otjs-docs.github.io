@@ -35,4 +35,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  legacy: {
+    collectionsBackwardsCompat: true,
+  },
 });

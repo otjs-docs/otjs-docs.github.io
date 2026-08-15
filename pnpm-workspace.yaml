@@ -1,3 +1,9 @@
+allowBuilds:
+  '@firebase/util': false
+  '@parcel/watcher': false
+  '@tailwindcss/oxide': false
+  esbuild: false
+  protobufjs: false
 onlyBuiltDependencies:
   - '@firebase/util'
   - '@parcel/watcher'
